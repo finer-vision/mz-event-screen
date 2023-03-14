@@ -19,6 +19,6 @@ export default ({ mode }) => {
     build: {
       outDir: "build",
     },
-    base: isProd ? "/mz-event-touchscreen/" : "/",
+    base: isProd ? "/mz-event-screen/" : "/",
   });
 };

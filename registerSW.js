@@ -1,1 +1,1 @@
-if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/mz-event-touchscreen/sw.js', { scope: '/mz-event-touchscreen/' })})}
+if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/mz-event-screen/sw.js', { scope: '/mz-event-screen/' })})}

@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    font-family: "Montserrat";
+    @apply bg-black text-white
+}
+
+.gradient-circle {
+    --box-spread: 0.3em;
+    clip-path: polygon( 0% calc(var(--box-spread) * -3),120% calc(var(--box-spread) * -3),100% calc(100% + (var(--box-spread) * 3)),-20% calc(100% + (var(--box-spread) * 3)) );
+}

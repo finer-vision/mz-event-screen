@@ -6,8 +6,7 @@
   "scripts": {
     "start": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview",
-    "env": "cp .env.example .env && cp .env.production.example .env.production && sed -i '' 's/\\.example//' .env .env.production"
+    "preview": "vite preview"
   },
   "dependencies": {
     "framer-motion": "^10.2.3",

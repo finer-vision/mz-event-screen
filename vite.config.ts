@@ -6,6 +6,7 @@ import * as path from "path";
 // https://vitejs.dev/config/
 export default ({ mode }) => {
   process.env = { ...process.env, ...loadEnv(mode, process.cwd()) };
+  const isProd = mode === "production";
 
   return defineConfig({
     plugins: [react(), VitePWA({ registerType: "autoUpdate" })],
@@ -18,6 +19,6 @@ export default ({ mode }) => {
     build: {
       outDir: "build",
     },
-    base: process.env.VITE_BASE_URL,
+    base: isProd ? "/mz-event-touchscreen/" : "/",
   });
 };

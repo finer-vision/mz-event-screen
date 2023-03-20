@@ -1,35 +1,66 @@
 import Logos from "@/components/Logos";
 import Carousel, { CarouselItem } from "./Carousel";
 import { useBackground } from "@/stores";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Slide from "@/components/Slide";
+import axios from "axios";
+import { useParams } from "react-router-dom";
 
-const carouselItems: CarouselItem[] = [
-    { 
-        image: "",
-        title: "1"
-    },
-    { 
-        image: "",
-        title: "2"
-    },
-    { 
-        image: "",
-        title: "3"
-    },
-    { 
-        image: "",
-        title: "4"
-    }
-]
+const fullTitles = {
+    "public_trust": "Let's build public trust",
+    "collaborate_effectively": "Let's collaborate effectively",
+    "right_people": "Let's get the right people",
+    "working_cultures": "Let's create better working cultures",
+}
+
 
 export default function Four() {
+    const { title } = useParams()
     const {setBackground} = useBackground()
+    const [items, setItems] = useState([])
+
+    useEffect(() => {
+        axios.get(`/data/${title}/${title}.json`).then(res => {
+            setItems(res.data)
+        })
+    }, [title])
+
+    const currentPage = Object.keys(fullTitles).findIndex(key => key === title)
+    const nextPageTitle = (() => {
+        try {
+            return Object.entries(fullTitles)[currentPage + 1][1]
+        } catch {
+            return fullTitles["public_trust"]
+        }
+    })()
+    const nextPageId = (() => {
+        try {
+            return Object.entries(fullTitles)[currentPage + 1][0]
+        } catch {
+            return "public_trust"
+        }
+    })()
+    const prevPageTitle = (() => {
+        try {
+            return Object.entries(fullTitles)[currentPage - 1][1]
+        } catch {
+            return fullTitles["working_cultures"]
+        }
+    })()
+    const prevPageId = (() => {
+        try {
+            return Object.entries(fullTitles)[currentPage - 1][0]
+        } catch {
+            return "working_cultures"
+        }
+    })()
 
     useEffect(() => {
         setBackground("black")
     }, [])
-    
+
+    if(!items.length) return <>Loading...</>
+
     return (
         <Slide
         className="relative flex flex-col justify-end items-center w-full h-full">
@@ -41,7 +72,7 @@ export default function Four() {
                     </div>
                     <img className="w-[80%]" src="./page4-profile.svg"/>
                 </div>
-                <Carousel items={carouselItems}/>
+                <Carousel items={items}/>
                 <div className="flex justify-between w-full h-[3vh]">
                     <img className="h-full mx-[6%]" src="./page4-btn1.svg"/>
                     <img className="h-full mx-[6%]" src="./page4-btn2.svg"/>

@@ -37,12 +37,12 @@ export default function App() {
   }, [session, pathname]);
 
   React.useEffect(() => {
-    // on page click, go to next page
     const currentPage = location.pathname.replace("/", "") || "1";
     const nextPage = parseInt(currentPage) + 1;
 
     //on page click listener
     const handlePageClick = () => {
+      if([4,5,6].includes(nextPage)) return;
       if(nextPage > 5) return;
       navigate(`/${nextPage}`);
     }
@@ -70,8 +70,8 @@ export default function App() {
           <Route path="/1" element={<One/>} />
           <Route path="/2" element={<Two/>} />
           <Route path="/3" element={<Three/>} />
-          <Route path="/4" element={<Four/>} />
-          <Route path="/5" element={<Five/>} />
+          <Route path="/4/:title" element={<Four/>} />
+          <Route path="/5/:title/:id" element={<Five/>} />
         </Routes>
         <Overlay key={0}/>
       </div>

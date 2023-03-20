@@ -6,6 +6,7 @@ import Slide from "@/components/Slide";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import Button from "./Button";
+import Title from "./Title";
 
 const fullTitles = {
     "public_trust": "Let's build public trust",
@@ -68,7 +69,9 @@ export default function Four() {
             <div className="flex flex-col grow gap-[5%] mt-[10%]">
                 <div className="w-full grid grid-cols-2 place-content-center place-items-center">
                     <div className="w-full flex flex-col px-[10%] gap-[5vw]">
-                        <img className="w-full" src="./page4-btn3.svg"/>
+                        <Title>
+                            {(fullTitles as any)[title as any]}
+                        </Title>
                         <img className="w-full" src="./page4-text.svg"/>
                     </div>
                     <img className="w-[80%]" src="./page4-profile.svg"/>

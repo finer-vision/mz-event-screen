@@ -1,4 +1,4 @@
-import { MouseEventHandler, useEffect, useState } from "react"
+import { useState } from "react"
 
 export type CarouselItem = {
     image: string,
@@ -18,13 +18,13 @@ export default function Carousel({items}: {items: CarouselItem[]}) {
     }
   
     const handlePrev = (e: any) => {
-        e.stopPropagation()
-        if (showing[0] === 0) {
-            setShowing([items.length - 3, items.length - 2, items.length - 1])
-        } else {
-            setShowing(showing.map(i => i - 1))
-        }
-    }
+        e.stopPropagation();
+        const notShowingIndices = items.map((item, index) => index).filter(index => !showing.includes(index));
+        const prevItemIndex = notShowingIndices[(notShowingIndices.indexOf(showing[0]) - 1 + notShowingIndices.length) % notShowingIndices.length];
+    
+        setShowing([prevItemIndex, ...showing.slice(0, max)]);
+    };
+    
 
     return (
         <div className="w-full flex items-center justify-center relative z-[60]">

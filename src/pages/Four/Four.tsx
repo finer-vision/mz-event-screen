@@ -1,10 +1,11 @@
 import Logos from "@/components/Logos";
-import Carousel, { CarouselItem } from "./Carousel";
+import Carousel from "./Carousel";
 import { useBackground } from "@/stores";
 import { useEffect, useState } from "react";
 import Slide from "@/components/Slide";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import Button from "./Button";
 
 const fullTitles = {
     "public_trust": "Let's build public trust",
@@ -63,7 +64,7 @@ export default function Four() {
 
     return (
         <Slide
-        className="relative flex flex-col justify-end items-center w-full h-full">
+        className="relative flex flex-col justify-end items-center w-full h-full z-[90]">
             <div className="flex flex-col grow gap-[5%] mt-[10%]">
                 <div className="w-full grid grid-cols-2 place-content-center place-items-center">
                     <div className="w-full flex flex-col px-[10%] gap-[5vw]">
@@ -74,8 +75,8 @@ export default function Four() {
                 </div>
                 <Carousel items={items}/>
                 <div className="flex justify-between w-full h-[3vh]">
-                    <img className="h-full mx-[6%]" src="./page4-btn1.svg"/>
-                    <img className="h-full mx-[6%]" src="./page4-btn2.svg"/>
+                    <Button to={`/4/${prevPageId}`}>{prevPageTitle}</Button>
+                    <Button to={`/4/${nextPageId}`}>{nextPageTitle}</Button>
                 </div>
             </div>
             <div className="font-bold my-[5%] text-[5cqw] w-[23%] relative -left-[6%] whitespace-nowrap">OUR CLIENTS<span className="text-[rgb(14,207,166)]">.</span></div>

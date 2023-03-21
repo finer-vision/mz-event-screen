@@ -15,7 +15,7 @@ export default function Two() {
             <div className="w-full flex flex-col items-center absolute left-1/2 -translate-x-1/2 top-[10%]">
                 <img src="./page2-circle.svg" className="w-[69%] aspect-square"/>
             </div>
-            <div className="font-bold my-[5%] text-[5cqw] w-[23%] relative -left-[6%] whitespace-nowrap">OUR CLIENTS<span className="text-[rgb(14,207,166)]">.</span></div>
+            <div className="font-bold my-[5%] text-[5vw] w-[23%] relative -left-[6%] whitespace-nowrap">OUR CLIENTS<span className="text-[rgb(14,207,166)]">.</span></div>
             <Logos className="mb-[7%]" src="./page2logos.svg"/>
             <div className="absolute bottom-0 w-full h-1/5 bg-gradient-to-t from-black/50 to-transparent"></div>
         </Slide>

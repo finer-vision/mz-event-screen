@@ -3,10 +3,10 @@ import { useBackground } from "@/stores"
 import { motion, useAnimationControls } from "framer-motion"
 import { useEffect } from "react"
 import { useNavigate } from "react-router-dom"
-import image1 from "./Image1.svg"
-import image2 from "./Image2.svg"
-import image3 from "./Image3.svg"
-import image4 from "./Image4.svg"
+import image1 from "./Image1.png"
+import image2 from "./Image2.png"
+import image3 from "./Image3.png"
+import image4 from "./Image4.png"
 
 const sections = Object.entries({
     "collaborate_effectively": image1,

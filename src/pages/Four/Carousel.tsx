@@ -41,7 +41,7 @@ export default function Carousel({items}: {items: PageData[]}) {
                             <img src={`./data/${pageTitle}/${image_url}`} />
                             <div className="absolute bottom-0 z-10 w-full h-[1%] bg-gradient-to-r from-[#05CCA3] via-[#46AFE1] to-[#8085F0]"></div>
                             <div className="absolute bottom-0 w-full h-1/3 bg-gradient-to-t from-black/70 to-transparent flex items-end p-1">
-                                <div className="text-[3cqw] text-start p-3">{title}</div>
+                                <div className="text-[3vw] text-start p-3">{title}</div>
                             </div>
                         </button>
                     )

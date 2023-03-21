@@ -37,7 +37,7 @@ export default function Five() {
                 <img src="./page5-btn.svg" className="w-[47vw]"/>
                 <img src="./page5-img.png" className="w-[86.2vw]"/>
                 <p dangerouslySetInnerHTML={{__html: content?.description || ""}}
-                className="text-center w-full px-5 text-[3cqw] flex grow flex-col gap-[2.5vw]">
+                className="text-center w-full px-5 text-[3vw] flex grow flex-col gap-[2.5vw]">
 
                 </p>
                 <Carousel items={items} />

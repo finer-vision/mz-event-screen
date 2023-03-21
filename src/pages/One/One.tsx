@@ -2,7 +2,7 @@ import Logos from "@/components/Logos"
 import Slide from "@/components/Slide"
 import { useBackground } from "@/stores"
 import { useEffect, useRef, useState } from "react"
-import video from "./video.mp4"
+import video from "./video.webm"
 
 export default function One() {
     const {setBackground} = useBackground()

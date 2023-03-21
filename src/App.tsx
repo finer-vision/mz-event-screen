@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import useSession from "@/hooks/useSession";
 import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import One from "@/pages/One/One"
@@ -42,7 +42,7 @@ export default function App() {
 
     //on page click listener
     const handlePageClick = () => {
-      if([4,5,6].includes(nextPage)) return;
+      if([4,5,6,2].includes(nextPage)) return;
       if(nextPage > 5) return;
       navigate(`/${nextPage}`);
     }
@@ -77,4 +77,49 @@ export default function App() {
       </div>
     </AnimatePresence>
   );
+}
+
+const NextPageButton = () => {
+  const navigate = useNavigate()
+  const location = useLocation()
+  const [showButton, setShowButton] = useState(true)
+  
+  useEffect(() => {
+    setShowButton([1,2].includes(Number(location.pathname.split('/')[1])))
+  }, [location])
+
+  return (
+    <>
+      {showButton && <button onClick={() => {
+        const pageNumber = location.pathname.split('/')[1]
+        navigate(`/${Number(pageNumber) + 1}`)
+      }}//reverse italics
+      className="fixed right-0 h-full px-5 text-white italic font-bold hover:bg-gray-800/50 hover:backdrop-blur-md transition-all">
+        Next
+      </button>}
+    </>
+  )
+}
+
+const PrevPageButton = () => {
+  const navigate = useNavigate()
+  const location = useLocation()
+  const [showButton, setShowButton] = useState(true)
+  
+  useEffect(() => {
+    setShowButton(![1,2].includes(Number(location.pathname.split('/')[1])))
+  }, [location])
+
+  return (
+    <>
+      {showButton && <button onClick={() => {
+        if([5].includes(Number(location.pathname.split('/')[1]))) navigate(-1)
+        const pageNumber = location.pathname.split('/')[1]
+        navigate(`/${Number(pageNumber) - 1}`)
+      }}
+      className="fixed left-0 h-full px-5 text-white font-bold hover:bg-gray-800/50 hover:backdrop-blur-md grid place-items-center transition-all">
+        <span className="skew-x-[15deg] text-white">Prev</span>
+      </button>}
+    </>
+  )
 }

@@ -18,8 +18,6 @@ export default function App() {
 
   return (
     <AnimatePresence>
-      <NextPageButton/>
-      <PrevPageButton/>
       <div style={{ background }}
       className="absolute top-0 left-0 w-screen h-screen flex flex-col overflow-hidden">
         <div onClick={(e) => {
@@ -42,63 +40,4 @@ export default function App() {
       </div>
     </AnimatePresence>
   );
-}
-
-const NextPageButton = () => {
-  const navigate = useNavigate()
-  const location = useLocation()
-  const [showButton, setShowButton] = useState(true)
-  
-  useEffect(() => {
-    if(location.pathname === "/") {
-      setShowButton(true)
-      return
-    }
-    setShowButton([1,2].includes(Number(location.pathname.split('/')[1])))
-  }, [location])
-
-  return (
-    <>
-      {showButton && <div 
-      className="fixed right-0 h-full text-[4vw] px-5 mb-[1vw] text-white italic font-bold flex items-end transition-all z-[100]">
-        <span onClick={() => {
-        if(location.pathname === "/") {
-          navigate("/2")
-          return
-        }
-        const pageNumber = location.pathname.split('/')[1]
-        navigate(`/${Number(pageNumber) + 1}`)
-      }}
-        className="mb-[1vw]">Next</span>
-      </div>}
-    </>
-  )
-}
-
-const PrevPageButton = () => {
-  const navigate = useNavigate()
-  const location = useLocation()
-  const [showButton, setShowButton] = useState(true)
-  
-  useEffect(() => {
-    if(location.pathname === "/") {
-      setShowButton(false)
-      return
-    }
-    setShowButton(![0,1].includes(Number(location.pathname.split('/')[1])))
-  }, [location])
-
-  return (
-    <>
-      {showButton && <div 
-      className="fixed left-0 h-full px-5 text-[4vw] text-white font-bold flex items-end transition-all z-[100]">
-        <span onClick={() => {
-        if([5].includes(Number(location.pathname.split('/')[1]))) navigate(-1)
-        const pageNumber = location.pathname.split('/')[1]
-        navigate(`/${Number(pageNumber) - 1}`)
-      }}
-        className="skew-x-[15deg] text-white mb-[1vw]">Prev</span>
-      </div>}
-    </>
-  )
 }

@@ -36,6 +36,12 @@ export default function Three() {
     
     return (
         <Slide className="w-full h-full flex flex-col items-center justify-center gap-[3%] relative z-[70]">
+            <button onClick={() => {
+              navigate('/2')
+            }}
+            className="w-10/12">
+              <img src="./back.png" alt="" />
+            </button>
             {sections.map(([title, image], i) => {
                 return (
                 <motion.img onClick={() => {

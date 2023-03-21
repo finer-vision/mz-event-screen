@@ -4,7 +4,7 @@ import { useBackground } from "@/stores";
 import { useEffect, useState } from "react";
 import Slide from "@/components/Slide";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Button from "./Button";
 import Title from "./Title";
 
@@ -21,6 +21,7 @@ export default function Four() {
     const { title } = useParams()
     const {setBackground} = useBackground()
     const [items, setItems] = useState([])
+    const navigate = useNavigate()
 
     useEffect(() => {
         axios.get(`${URL}data/${title}/${title}.json`).then(res => {
@@ -70,6 +71,12 @@ export default function Four() {
             <div className="flex flex-col grow gap-[5%] mt-[10%]">
                 <div className="w-full grid grid-cols-2 place-content-center place-items-center">
                     <div className="w-full flex flex-col px-[10%] gap-[5vw]">
+                        <button onClick={() => {
+                            navigate('/3')
+                            }}
+                            className="w-10/12">
+                            <img src="./back.png" alt="" />
+                        </button>
                         <Title>
                             {(fullTitles as any)[title as any]}
                         </Title>

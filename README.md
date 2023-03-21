@@ -3,6 +3,6 @@
 ## Getting Started
 ```shell
 nvm use # sets node version compatible with project
-npm run env # copies env files
+cp .env.example .env
 npm start # start the project
 ```

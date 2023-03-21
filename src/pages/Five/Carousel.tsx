@@ -25,7 +25,7 @@ export default function Carousel({items}: {items: PageData[]}) {
             <button onClick={handlePrev} className="flex justify-center">
                 <img src="./carousel-left.svg" className="w-[100%]"/>
             </button>
-            <div className="flex items-center justify-center gap-[3%] grow min-h-[22.2vh] overflow-x-hidden">
+            <div className="flex items-center justify-center gap-[3%] grow min-h-[22.2vh] overflow-hidden">
                 {showing.map((i) => {
                     if(items[i] === undefined) return (<div></div>)
                     const {image_url, title} = items[i]

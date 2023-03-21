@@ -8,13 +8,16 @@ export default ({children, className}: {children: React.ReactNode, className?: s
     return (
         <motion.div 
         initial={{
-            x: slideDirection === "left" ? 100 : -100,
+            opacity: 0,
         }}
         animate={{
-            x: 0,
+            opacity: 1,
         }}
         exit={{
-            x: slideDirection === "left" ? -100 : 100,
+            opacity: 0,
+        }}
+        transition={{
+            duration: 0.5,
         }}
         className={className}>
             {children}

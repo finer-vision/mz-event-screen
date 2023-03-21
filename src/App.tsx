@@ -59,7 +59,7 @@ const NextPageButton = () => {
 
   return (
     <>
-      {showButton && <button 
+      {showButton && <div 
       className="fixed right-0 h-full text-[4vw] px-5 mb-[1vw] text-white italic font-bold flex items-end transition-all z-[100]">
         <span onClick={() => {
         if(location.pathname === "/") {
@@ -70,7 +70,7 @@ const NextPageButton = () => {
         navigate(`/${Number(pageNumber) + 1}`)
       }}
         className="mb-[1vw]">Next</span>
-      </button>}
+      </div>}
     </>
   )
 }
@@ -90,7 +90,7 @@ const PrevPageButton = () => {
 
   return (
     <>
-      {showButton && <button 
+      {showButton && <div 
       className="fixed left-0 h-full px-5 text-[4vw] text-white font-bold flex items-end transition-all z-[100]">
         <span onClick={() => {
         if([5].includes(Number(location.pathname.split('/')[1]))) navigate(-1)
@@ -98,7 +98,7 @@ const PrevPageButton = () => {
         navigate(`/${Number(pageNumber) - 1}`)
       }}
         className="skew-x-[15deg] text-white mb-[1vw]">Prev</span>
-      </button>}
+      </div>}
     </>
   )
 }

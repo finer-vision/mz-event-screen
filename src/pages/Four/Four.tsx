@@ -15,6 +15,7 @@ const fullTitles = {
     "working_cultures": "Let's create better working cultures",
 }
 
+const URL = import.meta.env.VITE_GH_PAGES === "TRUE" ? "/mz-event-screen/" : ""
 
 export default function Four() {
     const { title } = useParams()
@@ -22,7 +23,7 @@ export default function Four() {
     const [items, setItems] = useState([])
 
     useEffect(() => {
-        axios.get(`/data/${title}/${title}.json`).then(res => {
+        axios.get(`${URL}/data/${title}/${title}.json`).then(res => {
             setItems(res.data)
         })
     }, [title])

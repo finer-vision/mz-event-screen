@@ -19,6 +19,7 @@ jobs:
           PUBLIC_PATH: ./
         run: |
           npm install
+          cp .env.prod.example .env
           npm run build
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.8

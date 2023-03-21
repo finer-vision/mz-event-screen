@@ -12,7 +12,7 @@ type Content = {
     video_url: string
 }
 
-
+const URL = import.meta.env.VITE_GH_PAGES === "TRUE" ? "/mz-event-screen/" : ""
 
 export default function Five() {
     const { title, id } = useParams()
@@ -25,7 +25,7 @@ export default function Five() {
     }, [])
 
     useEffect(() => {
-        axios.get(`/data/${title}/${title}.json`).then(res => {
+        axios.get(`${URL}/data/${title}/${title}.json`).then(res => {
             setItems(res.data)
             setContent(res.data.find((item: Content) => item.title === id))
         })

@@ -36,25 +36,10 @@ export default function App() {
     };
   }, [session, pathname]);
 
-  React.useEffect(() => {
-    const currentPage = location.pathname.replace("/", "") || "1";
-    const nextPage = parseInt(currentPage) + 1;
-
-    //on page click listener
-    const handlePageClick = () => {
-      if([4,5,6,2].includes(nextPage)) return;
-      if(nextPage > 5) return;
-      navigate(`/${nextPage}`);
-    }
-    document.body.addEventListener("click", handlePageClick)
-
-    return () => {
-      document.body.removeEventListener("click", handlePageClick)
-    }
-  }, [location]);
-
   return (
     <AnimatePresence>
+      <NextPageButton/>
+      <PrevPageButton/>
       <div style={{ background }}
       className="absolute top-0 left-0 w-screen h-screen flex flex-col overflow-hidden">
         <div onClick={(e) => {
@@ -85,17 +70,25 @@ const NextPageButton = () => {
   const [showButton, setShowButton] = useState(true)
   
   useEffect(() => {
+    if(location.pathname === "/") {
+      setShowButton(true)
+      return
+    }
     setShowButton([1,2].includes(Number(location.pathname.split('/')[1])))
   }, [location])
 
   return (
     <>
       {showButton && <button onClick={() => {
+        if(location.pathname === "/") {
+          navigate("/2")
+          return
+        }
         const pageNumber = location.pathname.split('/')[1]
         navigate(`/${Number(pageNumber) + 1}`)
-      }}//reverse italics
-      className="fixed right-0 h-full px-5 text-white italic font-bold hover:bg-gray-800/50 hover:backdrop-blur-md transition-all">
-        Next
+      }}
+      className="fixed right-0 h-full text-[4vw] px-5 mb-[1vw] text-white italic font-bold flex items-end transition-all z-[100]">
+        <span className="mb-[1vw]">Next</span>
       </button>}
     </>
   )
@@ -107,7 +100,11 @@ const PrevPageButton = () => {
   const [showButton, setShowButton] = useState(true)
   
   useEffect(() => {
-    setShowButton(![1,2].includes(Number(location.pathname.split('/')[1])))
+    if(location.pathname === "/") {
+      setShowButton(false)
+      return
+    }
+    setShowButton(![0,1].includes(Number(location.pathname.split('/')[1])))
   }, [location])
 
   return (
@@ -117,8 +114,8 @@ const PrevPageButton = () => {
         const pageNumber = location.pathname.split('/')[1]
         navigate(`/${Number(pageNumber) - 1}`)
       }}
-      className="fixed left-0 h-full px-5 text-white font-bold hover:bg-gray-800/50 hover:backdrop-blur-md grid place-items-center transition-all">
-        <span className="skew-x-[15deg] text-white">Prev</span>
+      className="fixed left-0 h-full px-5 text-[4vw] text-white font-bold flex items-end transition-all z-[100]">
+        <span className="skew-x-[15deg] text-white mb-[1vw]">Prev</span>
       </button>}
     </>
   )

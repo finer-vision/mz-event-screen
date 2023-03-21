@@ -1,23 +1,46 @@
 import Logos from "@/components/Logos"
 import Slide from "@/components/Slide"
 import { useBackground } from "@/stores"
-import { useEffect } from "react"
+import { useEffect, useRef, useState } from "react"
+import video from "./video.mp4"
 
 export default function One() {
     const {setBackground} = useBackground()
+    const videoRef = useRef<HTMLVideoElement | null>(null)
+    const [playing, setPlaying] = useState(false)
 
     useEffect(() => {
-        setBackground("url(./page1bg.jpeg)")
+        setBackground("black")
     }, [])
 
     return (
-        <Slide className="relative flex flex-col justify-end items-center w-full h-full bg-cover bg-no-repeat">
-            <button className="w-[20%] aspect-sqaure absolute left-1/2 top-[35%] -translate-x-1/2">
+        <Slide className="relative z-[60] flex flex-col justify-end items-center w-full h-full bg-cover bg-no-repeat">
+            <video ref={videoRef}
+            onClick={() => {
+                console.log("click")
+                //if playing, pause, else play
+                if(playing) {
+                    videoRef.current?.pause()
+                } else {
+                    videoRef.current?.play()
+                }
+            }}
+            src={video} 
+            onPlay={() => {
+                setPlaying(true)
+            }}
+            onPause={() => {
+                setPlaying(false)
+            }}
+            onEnded={() => {
+                setPlaying(false)
+            }}
+             className="fixed z-10 top-0 left-0 w-screen h-screen"></video>
+            {!playing && <button 
+            className="w-[20%] aspect-sqaure absolute z-20 left-1/2 top-[35%] -translate-x-1/2 pointer-events-none">
                 <img className="w-full h-full"
                 src="./page1playbtn.svg"/>
-            </button>
-            <Logos className="mb-[5%]" src="./page1logos.svg"/>
-            <div className="absolute bottom-0 w-full h-1/5 bg-gradient-to-t from-black/50 to-transparent"></div>
+            </button>}
         </Slide>
     )
 }

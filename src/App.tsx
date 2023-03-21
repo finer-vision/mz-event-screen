@@ -14,27 +14,7 @@ export const DEV = import.meta.env.MODE === "development";
 
 export default function App() {
   const navigate = useNavigate();
-  const location = useLocation()
-  const session = useSession(
-    "https://analytics-server.finervision.com/api/save-sessions",
-    "mz-screen"
-  );
   const { background } = useBackground()
-
-  const { pathname } = useLocation();
-
-  React.useEffect(() => {
-    if (DEV) return;
-    if (pathname === "/") {
-      session.end();
-    }
-    if (pathname === "/start") {
-      session.start();
-    }
-    window.onbeforeunload = () => {
-      session.end();
-    };
-  }, [session, pathname]);
 
   return (
     <AnimatePresence>

@@ -25,7 +25,7 @@ export default function Five() {
     }, [])
 
     useEffect(() => {
-        axios.get(`${URL}/data/${title}/${title}.json`).then(res => {
+        axios.get(`${URL}data/${title}/${title}.json`).then(res => {
             setItems(res.data)
             setContent(res.data.find((item: Content) => item.title === id))
         })

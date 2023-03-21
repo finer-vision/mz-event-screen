@@ -23,7 +23,7 @@ export default function Four() {
     const [items, setItems] = useState([])
 
     useEffect(() => {
-        axios.get(`${URL}/data/${title}/${title}.json`).then(res => {
+        axios.get(`${URL}data/${title}/${title}.json`).then(res => {
             setItems(res.data)
         })
     }, [title])

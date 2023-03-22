@@ -82,7 +82,7 @@ export default function Four() {
                         </Title>
                         <img className="w-full" src="./page4-text.svg"/>
                     </div>
-                    <img className="w-[80%]" src="./page4-profile.svg"/>
+                    <img className="w-[40vw]" src="./page4-profile.svg"/>
                 </div>
                 <Carousel items={items}/>
                 <div className="flex justify-between w-full gap-[1vw] h-[3vh]">

@@ -17,6 +17,8 @@ export default function One() {
         <Slide className="relative z-[60] flex flex-col justify-end items-center w-full h-full bg-cover bg-no-repeat">
             <video
             autoPlay={true}
+            loop={true}
+            muted={true}
             src={video}
              className="fixed z-10 top-0 left-0 w-screen h-screen"></video>
             <button onClick={() => {

@@ -85,7 +85,7 @@ export default function Four() {
                     <img className="w-[80%]" src="./page4-profile.svg"/>
                 </div>
                 <Carousel items={items}/>
-                <div className="flex justify-between w-full h-[3vh]">
+                <div className="flex justify-between w-full gap-[1vw] h-[3vh]">
                     <Button to={`/4/${prevPageId}`}>{prevPageTitle}</Button>
                     <Button to={`/4/${nextPageId}`}>{nextPageTitle}</Button>
                 </div>

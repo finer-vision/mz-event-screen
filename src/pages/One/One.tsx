@@ -9,16 +9,14 @@ import { useNavigate } from "react-router-dom"
 export default function One() {
     const navigate = useNavigate()
     const {setBackground} = useBackground()
-    const videoRef = useRef<HTMLVideoElement | null>(null)
-
     useEffect(() => {
         setBackground("black")
     }, [])
 
     return (
         <Slide className="relative z-[60] flex flex-col justify-end items-center w-full h-full bg-cover bg-no-repeat">
-            <video ref={videoRef}
-            autoPlay
+            <video
+            autoPlay={true}
             src={video}
              className="fixed z-10 top-0 left-0 w-screen h-screen"></video>
             <button onClick={() => {

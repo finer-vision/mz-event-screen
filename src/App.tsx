@@ -9,12 +9,20 @@ import Five from "@/pages/Five/Five"
 import { AnimatePresence } from "framer-motion";
 import Overlay from "./components/Overlay";
 import { useBackground } from "./stores";
+import { useIdleTimer } from "react-idle-timer";
 
 export const DEV = import.meta.env.MODE === "development";
 
 export default function App() {
   const navigate = useNavigate();
   const { background } = useBackground()
+
+  useIdleTimer({
+    timeout: 60000,
+    onIdle: () => {
+      navigate("/1")
+    }
+  })
 
   return (
     <AnimatePresence>

@@ -1,12 +1,17 @@
 import React from "react"
 import { motion } from "framer-motion"
 import { useSlideDirection } from "@/stores"
+import { useNavigate } from "react-router-dom"
 
-export default ({children, className}: {children: React.ReactNode, className?: string}) => {
+export default ({onClick, children, className}: {children: React.ReactNode, className?: string, onClick?: Function}) => {
     const { slideDirection } = useSlideDirection()
+    const navigate = useNavigate()
 
     return (
         <motion.div 
+        onClick={() => {
+            navigate("/2")
+        }}
         initial={{
             opacity: 0,
         }}

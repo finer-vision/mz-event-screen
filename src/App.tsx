@@ -1,13 +1,10 @@
-import React, { useEffect, useState } from "react";
-import useSession from "@/hooks/useSession";
-import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import One from "@/pages/One/One"
 import Two from "@/pages/Two/Two"
 import Three from "@/pages/Three/Three"
 import Four from "@/pages/Four/Four"
 import Five from "@/pages/Five/Five"
 import { AnimatePresence } from "framer-motion";
-import Overlay from "./components/Overlay";
 import { useBackground } from "./stores";
 import { useIdleTimer } from "react-idle-timer";
 
@@ -44,7 +41,6 @@ export default function App() {
           <Route path="/4/:title" element={<Four/>} />
           <Route path="/5/:title/:id" element={<Five/>} />
         </Routes>
-        <Overlay key={0}/>
       </div>
     </AnimatePresence>
   );

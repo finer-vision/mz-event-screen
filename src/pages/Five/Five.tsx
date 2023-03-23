@@ -5,6 +5,7 @@ import Slide from "@/components/Slide";
 import axios from "axios";
 import { PageData } from "@/types";
 import { useNavigate, useParams } from "react-router-dom";
+import Overlay from "../../components/Overlay";
 
 type Content = {
   title: string;
@@ -51,6 +52,7 @@ export default function Five() {
         ></p>
         <Carousel items={items} />
       </div>
+      <Overlay />
     </Slide>
   );
 }

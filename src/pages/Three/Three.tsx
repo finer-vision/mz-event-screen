@@ -35,7 +35,7 @@ export default function Three() {
     }, [])
     
     return (
-        <Slide className="w-full h-full flex flex-col items-center justify-center gap-[3%] relative z-[70]">
+        <Slide className="w-full h-5/6 flex flex-col items-center justify-center gap-[1%] relative z-[70]">
             <button onClick={() => {
               navigate('/2')
             }}

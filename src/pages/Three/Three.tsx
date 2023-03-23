@@ -36,31 +36,33 @@ export default function Three() {
   }, []);
 
   return (
-    <Slide className="w-full h-5/6 flex flex-col items-center justify-center gap-[1%] relative z-[70]">
-      <button
-        onClick={() => {
-          navigate("/2");
-        }}
-        className="w-10/12"
-      >
-        <img src="./back.png" alt="" />
-      </button>
-      {sections.map(([title, image], i) => {
-        return (
-          <motion.img
-            onClick={() => {
-              navigate(`/4/${title}`);
-            }}
-            initial={{ opacity: 0 }}
-            custom={i}
-            animate={controls}
-            className="lg:my-5 xl:my-10"
-            key={i}
-            src={image}
-          />
-        );
-      })}
+    <>
+      <Slide className="w-full h-5/6 flex flex-col items-center justify-center gap-[1%] relative z-[100]">
+        <button
+          onClick={() => {
+            navigate("/2");
+          }}
+          className="w-10/12"
+        >
+          <img src="./back.png" alt="" />
+        </button>
+        {sections.map(([title, image], i) => {
+          return (
+            <motion.img
+              onClick={() => {
+                navigate(`/4/${title}`);
+              }}
+              initial={{ opacity: 0 }}
+              custom={i}
+              animate={controls}
+              className="lg:my-5 xl:my-10"
+              key={i}
+              src={image}
+            />
+          );
+        })}
+      </Slide>
       <Overlay />
-    </Slide>
+    </>
   );
 }

@@ -87,8 +87,8 @@ export default function Four() {
           </div>
           <Carousel items={items} />
           <div className="flex justify-between w-full gap-[1vw] h-[3vh]">
-            <Button to={`/4/${prevPageId}`}>{prevPageTitle}</Button>
-            <Button to={`/4/${nextPageId}`}>{nextPageTitle}</Button>
+            <Button to={`/4/${prevPageId}`}><img src="./arrow-left.svg" alt="previous"/><span>{prevPageTitle}</span></Button>
+            <Button to={`/4/${nextPageId}`}><span>{nextPageTitle}</span><img src="./arrow-right.svg" alt="next"/></Button>
           </div>
         </div>
         <div className="font-bold my-[5%] text-[5vw] w-[23%] relative -left-[6%] whitespace-nowrap">

@@ -5,6 +5,7 @@ import video from "./video.webm";
 import go from "./go.png";
 import { useNavigate } from "react-router-dom";
 import Overlay from "../../components/Overlay";
+import Logos from "@/components/Logos";
 
 export default function One() {
   const navigate = useNavigate();
@@ -35,6 +36,7 @@ export default function One() {
         <button className="w-[30vw] -mt-[25vw] aspect-square relative z-50">
           <img className="w-full h-full" src={go} />
         </button>
+        <Logos className="!absolute bottom-[5vw]" src="./page2logos.svg" />
       </Slide>
       <Overlay handleClick={handleNextPage} />
     </>

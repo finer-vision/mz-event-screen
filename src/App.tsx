@@ -19,7 +19,7 @@ export default function App() {
   const path = location.pathname;
 
   useIdleTimer({
-    timeout: 60000000,
+    timeout: 60000,
     onIdle: () => {
       navigate("/1");
     },
@@ -36,9 +36,9 @@ export default function App() {
             e.stopPropagation();
             navigate("/");
           }}
-          className="w-full grid place-items-center mt-[12%] relative z-[60]"
+          className="w-full grid place-items-center mt-[12%] relative z-[600]"
         >
-          {path === "/" ? <></> : <img className="w-[46%]" src="./logo.svg" />}
+        <img className="w-[46%]" src="./logo.svg" />
         </div>
         <Routes key={1}>
           <Route path="/" element={<Intro />} />

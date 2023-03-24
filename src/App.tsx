@@ -9,7 +9,7 @@ import { AnimatePresence } from "framer-motion";
 import { useBackground } from "./stores";
 import { useIdleTimer } from "react-idle-timer";
 
-export const DEV = import.meta.env.MODE === "development";
+export const DEV = import.meta.env.DEV;
 
 export default function App() {
   const navigate = useNavigate();
@@ -19,7 +19,7 @@ export default function App() {
   const path = location.pathname;
 
   useIdleTimer({
-    timeout: 60000,
+    timeout: 60000000,
     onIdle: () => {
       navigate("/1");
     },

@@ -11,10 +11,10 @@ import { motion } from "framer-motion";
 import fade from "@/motion/fade";
 
 const fullTitles = {
-  public_trust: "Let's build public trust",
-  collaborate_effectively: "Let's collaborate effectively",
-  right_people: "Let's get the right people",
-  working_cultures: "Let's create better working cultures",
+  public_trust: "Let's build \npublic trust",
+  collaborate_effectively: "Let's collaborate \neffectively",
+  right_people: "Let's get the \nright people",
+  working_cultures: "Let's create better \nworking cultures",
 };
 
 const URL = import.meta.env.VITE_GH_PAGES === "TRUE" ? "/mz-event-screen/" : "";
@@ -70,7 +70,7 @@ export default function Four() {
   return (
     <>
       <div className="relative flex flex-col justify-end items-center w-full h-full z-[90]">
-        <motion.div {... fade(2)} className="flex flex-col grow gap-[5%] mt-[10%]">
+        <motion.div {... fade(2)} className="w-full flex flex-col grow gap-[5%] mt-[10%]">
           <div className="w-full grid grid-cols-2 place-content-center place-items-center">
             <div className="w-full flex flex-col px-[10%] gap-[5vw]">
               <button
@@ -87,9 +87,17 @@ export default function Four() {
             <img className="w-[40vw]" src="./page4-profile.svg" />
           </div>
           <Carousel items={items} />
-          <div className="grid grid-cols-2 w-full px-[3vw] gap-[1vw] h-[3vh]">
-            <Button iconDirection="left" to={`/4/${prevPageId}`}>{prevPageTitle}</Button>
-            <Button iconDirection="right" to={`/4/${nextPageId}`}>{nextPageTitle}</Button>
+          <div className="grid grid-cols-2 w-full px-[3vw] gap-[1vw] h-[3vh] place-items-center place-content-center w-[72%] mx-auto">
+            <Button width={30} py={3} iconDirection="left" to={`/4/${prevPageId}`}>
+              <span className="whitespace-pre" style={{lineHeight: "1", display:"block"}}>
+                {prevPageTitle}
+              </span>
+            </Button>
+            <Button width={30} py={3} iconDirection="right" to={`/4/${nextPageId}`}>
+              <span className="whitespace-pre" style={{lineHeight: "1", display:"block"}}>
+                {nextPageTitle}
+              </span>
+            </Button>
           </div>
         </motion.div>
         <motion.div {... fade(3)} className="font-bold my-[5%] text-[5vw] w-[23%] relative -left-[6%] whitespace-nowrap">

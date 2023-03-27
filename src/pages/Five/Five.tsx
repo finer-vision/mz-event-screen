@@ -37,29 +37,43 @@ export default function Five() {
   }, [title, id]);
 
   useEffect(() => {
-    if(playing) {
+    if (playing) {
       videoRef.current?.play();
     } else {
       videoRef.current?.pause();
     }
-  }, [playing])
+  }, [playing]);
 
   return (
     <>
       <div className="relative flex flex-col items-center w-full h-full z-[500]">
         <div className="flex flex-col gap-[3%] w-full h-full items-center mt-[10%]">
-          <button
-            onClick={() => {
-              navigate(`/4/${title}`);
-            }}
-            className="w-10/12"
-          >
-            <img src="./back.png" alt="" />
-          </button>
+          <div className="w-10/12 flex">
+            <button
+              onClick={() => {
+                navigate(`/4/${title}`);
+              }}
+              className="text-[3vw] px-[2vw] rounded-full bg-gradient-to-r from-[#05CCA3] via-[#46AFE1] to-[#8085F0]"
+            >
+              BACK
+            </button>
+          </div>
           <img src="./page5-btn.svg" className="w-[47vw]" />
-         {!videoExists && <img src={`${URL}/database/${title}/${content?.image_url}`} className="min-w-[86.2vw] min-h-[22vh] max-h-[22vh]" />}
-          {videoExists && <video poster={`${URL}/database/${title}/${content?.image_url}`}
-          onClick={() => setPlaying(playing => !playing)} ref={videoRef} src={`${URL}/database/${title}/${content?.video_url}`} className="min-w-[86.2vw] min-h-[22vh] max-h-[22vh]" />}
+          {!videoExists && (
+            <img
+              src={`${URL}/database/${title}/${content?.image_url}`}
+              className="min-w-[86.2vw] min-h-[22vh] max-h-[22vh]"
+            />
+          )}
+          {videoExists && (
+            <video
+              poster={`${URL}/database/${title}/${content?.image_url}`}
+              onClick={() => setPlaying((playing) => !playing)}
+              ref={videoRef}
+              src={`${URL}/database/${title}/${content?.video_url}`}
+              className="min-w-[86.2vw] min-h-[22vh] max-h-[22vh]"
+            />
+          )}
           <h1 className="text-[5vw] text-center">{content?.title}</h1>
           <div
             dangerouslySetInnerHTML={{ __html: content?.description || "" }}

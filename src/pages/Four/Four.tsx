@@ -70,17 +70,22 @@ export default function Four() {
   return (
     <>
       <div className="relative flex flex-col justify-end items-center w-full h-full z-[90]">
-        <motion.div {... fade(2)} className="flex flex-col grow gap-[5%] mt-[10%]">
+        <motion.div
+          {...fade(2)}
+          className="flex flex-col grow gap-[5%] mt-[10%]"
+        >
           <div className="w-full grid grid-cols-2 place-content-center place-items-center">
             <div className="w-full flex flex-col px-[10%] gap-[5vw]">
-              <button
-                onClick={() => {
-                  navigate("/3");
-                }}
-                className="w-10/12"
-              >
-                <img src="./back.png" alt="" />
-              </button>
+              <div className="w-10/12 flex">
+                <button
+                  onClick={() => {
+                    navigate(`/3`);
+                  }}
+                  className="text-[3vw] px-[2vw] rounded-full bg-gradient-to-r from-[#05CCA3] via-[#46AFE1] to-[#8085F0]"
+                >
+                  BACK
+                </button>
+              </div>
               <Title>{(fullTitles as any)[title as any]}</Title>
               <img className="w-full" src="./page4-text.svg" />
             </div>
@@ -88,11 +93,18 @@ export default function Four() {
           </div>
           <Carousel items={items} />
           <div className="grid grid-cols-2 w-full px-[3vw] gap-[1vw] h-[3vh]">
-            <Button iconDirection="left" to={`/4/${prevPageId}`}>{prevPageTitle}</Button>
-            <Button iconDirection="right" to={`/4/${nextPageId}`}>{nextPageTitle}</Button>
+            <Button iconDirection="left" to={`/4/${prevPageId}`}>
+              {prevPageTitle}
+            </Button>
+            <Button iconDirection="right" to={`/4/${nextPageId}`}>
+              {nextPageTitle}
+            </Button>
           </div>
         </motion.div>
-        <motion.div {... fade(3)} className="font-bold my-[5%] text-[5vw] w-[23%] relative -left-[6%] whitespace-nowrap">
+        <motion.div
+          {...fade(3)}
+          className="font-bold my-[5%] text-[5vw] w-[23%] relative -left-[6%] whitespace-nowrap"
+        >
           OUR CLIENTS<span className="text-[rgb(14,207,166)]">.</span>
         </motion.div>
         <Logos when={3} className="mb-[7%]" src="./page2logos.svg" />

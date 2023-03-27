@@ -2,12 +2,13 @@ import Logos from "@/components/Logos";
 import Carousel from "./Carousel";
 import { useBackground } from "@/stores";
 import { useEffect, useState } from "react";
-import Slide from "@/components/Slide";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import Button from "./Button";
 import Title from "./Title";
 import Overlay from "../../components/Overlay";
+import { motion } from "framer-motion";
+import fade from "@/motion/fade";
 
 const fullTitles = {
   public_trust: "Let's build public trust",
@@ -68,8 +69,8 @@ export default function Four() {
 
   return (
     <>
-      <Slide className="relative flex flex-col justify-end items-center w-full h-full z-[90]">
-        <div className="flex flex-col grow gap-[5%] mt-[10%]">
+      <div className="relative flex flex-col justify-end items-center w-full h-full z-[90]">
+        <motion.div {... fade(2)} className="flex flex-col grow gap-[5%] mt-[10%]">
           <div className="w-full grid grid-cols-2 place-content-center place-items-center">
             <div className="w-full flex flex-col px-[10%] gap-[5vw]">
               <button
@@ -86,17 +87,17 @@ export default function Four() {
             <img className="w-[40vw]" src="./page4-profile.svg" />
           </div>
           <Carousel items={items} />
-          <div className="flex justify-between w-full gap-[1vw] h-[3vh]">
-            <Button to={`/4/${prevPageId}`}><img src="./arrow-left.svg" alt="previous"/><span>{prevPageTitle}</span></Button>
-            <Button to={`/4/${nextPageId}`}><span>{nextPageTitle}</span><img src="./arrow-right.svg" alt="next"/></Button>
+          <div className="grid grid-cols-2 w-full px-[3vw] gap-[1vw] h-[3vh]">
+            <Button iconDirection="left" to={`/4/${prevPageId}`}>{prevPageTitle}</Button>
+            <Button iconDirection="right" to={`/4/${nextPageId}`}>{nextPageTitle}</Button>
           </div>
-        </div>
-        <div className="font-bold my-[5%] text-[5vw] w-[23%] relative -left-[6%] whitespace-nowrap">
+        </motion.div>
+        <motion.div {... fade(3)} className="font-bold my-[5%] text-[5vw] w-[23%] relative -left-[6%] whitespace-nowrap">
           OUR CLIENTS<span className="text-[rgb(14,207,166)]">.</span>
-        </div>
-        <Logos className="mb-[7%]" src="./page2logos.svg" />
+        </motion.div>
+        <Logos when={3} className="mb-[7%]" src="./page2logos.svg" />
         <div className="absolute bottom-0 w-full h-1/5 bg-gradient-to-t from-black/50 to-transparent"></div>
-      </Slide>
+      </div>
       <Overlay />
     </>
   );

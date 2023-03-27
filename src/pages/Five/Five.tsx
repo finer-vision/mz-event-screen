@@ -1,7 +1,6 @@
 import { useBackground } from "@/stores";
 import Carousel from "./Carousel";
 import { useEffect, useState } from "react";
-import Slide from "@/components/Slide";
 import axios from "axios";
 import { PageData } from "@/types";
 import { useNavigate, useParams } from "react-router-dom";
@@ -35,7 +34,7 @@ export default function Five() {
 
   return (
     <>
-      <Slide className="relative flex flex-col items-center w-full h-full">
+      <div className="relative flex flex-col items-center w-full h-full">
         <div className="flex flex-col gap-[3%] w-full h-full items-center mt-[10%]">
           <button
             onClick={() => {
@@ -53,7 +52,7 @@ export default function Five() {
           ></p>
           <Carousel items={items} />
         </div>
-      </Slide>
+      </div>
       <Overlay />
     </>
   );

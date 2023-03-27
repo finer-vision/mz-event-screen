@@ -1,7 +1,6 @@
 
 import { useBackground } from "@/stores";
 import { useEffect } from "react";
-import video from "./video.webm";
 import go from "./go.png";
 import { useNavigate } from "react-router-dom";
 import Overlay from "../../components/Overlay";
@@ -32,7 +31,7 @@ export default function One() {
           autoPlay={true}
           loop={true}
           muted={true}
-          src={video}
+          src="./video.webm"
           className="fixed z-10 top-0 left-0 w-screen h-screen"
         ></video>
         <motion.button {... fade(2)} className="w-[30vw] -mt-[25vw] aspect-square relative z-50">

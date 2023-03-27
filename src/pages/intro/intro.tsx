@@ -12,7 +12,7 @@ export default function Intro() {
   return (
     <div className="fixed inset-0 z-50 bg-black">
       <video
-        src={video}
+        src="./page1-video.mp4"
         muted
         playsInline
         autoPlay

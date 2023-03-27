@@ -60,7 +60,7 @@ html {
   clip-path: polygon(50% 0, 50% 0, 50% 100%, 50% 100%);
   z-index: 10;
 
-  animation: reveal 2s linear forwards;
+  animation: reveal 1s linear 1s forwards;
 }
 
 .circle-text {

@@ -69,7 +69,7 @@ export default ({items}: CarouselProps) => {
               > 
                 <style>{`
                   #carousel-${i}::before {
-                    background-image: url(data/${title}/${item.image_url});
+                    background-image: url(database/${title}/${item.image_url});
                   }
                 `}</style>
                 <span className="relative z-10 text-[3vw] p-[.1vw] px-[1vw]">{item.title}</span>

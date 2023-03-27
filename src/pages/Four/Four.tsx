@@ -26,7 +26,7 @@ export default function Four() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get(`${URL}data/${title}/${title}.json`).then((res) => {
+    axios.get(`${URL}database/${title}/${title}.json`).then((res) => {
       setItems(res.data);
     });
   }, [title]);

@@ -13,7 +13,7 @@ type CarouselProps = {
 }
 
 export default ({items}: CarouselProps) => {
-  const [hoveredItem, setHoveredItem] = useState(-1)
+  const [hoveredItem, setHoveredItem] = useState(0)
   const debounceRef = useRef<boolean>(false)
   const itemRefs = useRef<(HTMLDivElement | null)[]>([])
   const location = useLocation()
@@ -28,7 +28,6 @@ export default ({items}: CarouselProps) => {
   }, [location])
 
   useEffect(() => {
-    if (hoveredItem === -1) return
     itemRefs.current[hoveredItem]?.scrollIntoView({behavior: "smooth", block: 'nearest'})
   }, [hoveredItem])
 
@@ -51,7 +50,7 @@ export default ({items}: CarouselProps) => {
                 id={`carousel-${i}`}
                 key={i}
                 ref={el => itemRefs.current[i] = el}
-                onClick={() => {
+                onClick={(e) => {
                   navigate(`/5/${title}/${item.title}`)
                 }}
                 onMouseEnter={() => {

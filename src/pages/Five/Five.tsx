@@ -57,8 +57,9 @@ export default function Five() {
             <img src="./back.png" alt="" />
           </button>
           <img src="./page5-btn.svg" className="w-[47vw]" />
-          {!videoExists && <img src={`${URL}/database/${title}/${content?.image_url}`} className="min-w-[86.2vw] min-h-[22vh] max-h-[22vh]" />}
-          {videoExists && <video onClick={() => setPlaying(playing => !playing)} ref={videoRef} src={`${URL}/database/${title}/${content?.video_url}`} className="min-w-[86.2vw] min-h-[22vh] max-h-[22vh]" />}
+         {!videoExists && <img src={`${URL}/database/${title}/${content?.image_url}`} className="min-w-[86.2vw] min-h-[22vh] max-h-[22vh]" />}
+          {videoExists && <video poster={`${URL}/database/${title}/${content?.image_url}`}
+          onClick={() => setPlaying(playing => !playing)} ref={videoRef} src={`${URL}/database/${title}/${content?.video_url}`} className="min-w-[86.2vw] min-h-[22vh] max-h-[22vh]" />}
           <h1 className="text-[5vw] text-center">{content?.title}</h1>
           <div
             dangerouslySetInnerHTML={{ __html: content?.description || "" }}

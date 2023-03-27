@@ -62,7 +62,7 @@ export default function Five() {
           <h1 className="text-[5vw] text-center">{content?.title}</h1>
           <div
             dangerouslySetInnerHTML={{ __html: content?.description || "" }}
-            className="text-justify w-full overflow-y-scroll overflow-x-hidden h-[20vw] px-[5vw] text-[3vw] flex grow"
+            className="text-justify w-full overflow-y-scroll overflow-x-hidden h-[20vw] px-[5vw] text-[3vw] flex grow whitespace-pre-wrap"
           ></div>
           <Carousel items={items} />
         </div>

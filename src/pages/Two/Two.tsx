@@ -22,7 +22,12 @@ export default function Two() {
     <>
       <Slide className="relative flex flex-col justify-end items-center w-full h-full bg-cover bg-no-repeat z-50">
         <div className="w-full flex flex-col items-center absolute left-1/2 -translate-x-1/2 top-[10%]">
-          <img src="./page2-circle.svg" className="w-[69%] aspect-square" />
+          <div className="circle-wrapper"></div>
+          <div className="circle-animation"></div>
+          <img
+                src="./page2-circle-text.svg"
+                className="w-[69%] aspect-square circle-text"
+              />
           <img src={start} className="w-[17.7%]" />
         </div>
         <div className="font-bold my-[5%] text-[5cqw] w-[23%] relative -left-[6%] whitespace-nowrap">

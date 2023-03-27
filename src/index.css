@@ -3,18 +3,76 @@
 @tailwind utilities;
 
 html {
-    font-family: "Montserrat";
-    @apply bg-black text-white
+  font-family: "Montserrat";
+  @apply bg-black text-white;
 }
 
-.gradient-circle {
-    --box-spread: 0.3em;
-    clip-path: polygon( 0% calc(var(--box-spread) * -3),120% calc(var(--box-spread) * -3),100% calc(100% + (var(--box-spread) * 3)),-20% calc(100% + (var(--box-spread) * 3)) );
+.circle-wrapper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
 }
 
+.circle-animation {
+  font-size: 1.5em;
+  text-align: center;
+  width: 70%;
+  height: 20%;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  z-index: 0;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
-[data-title=true] {
-    font-size: 5vw;
-    font-weight: bold;
-    color: #05CFA6;
+@keyframes reveal {
+  from {
+    clip-path: polygon(50% 0, 50% 0, 50% 100%, 50% 100%);
+  }
+
+  to {
+    clip-path: polygon(
+      0% calc(0.3em * -3),
+      120% calc(0.3em * -3),
+      100% calc(100% + (0.3em * 3)),
+      -20% calc(100% + (0.3em * 3))
+    );
+  }
+}
+
+.circle-animation:after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  top: 50%;
+  left: 50%;
+  background-image: url("./circle-inner4.svg");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: contain;
+  width: 100%;
+  height: 95%;
+  transform: translate(-50%, -50%);
+  clip-path: polygon(50% 0, 50% 0, 50% 100%, 50% 100%);
+  z-index: 10;
+
+  animation: reveal 2s linear forwards;
+}
+
+.circle-text {
+  position: absolute;
+  z-index: 10;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+[data-title="true"] {
+  font-size: 5vw;
+  font-weight: bold;
+  color: #05cfa6;
 }

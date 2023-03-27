@@ -71,8 +71,7 @@ html {
   transform: translate(-50%, -50%);
 }
 
-[data-title="true"] {
-  font-size: 5vw;
-  font-weight: bold;
-  color: #05cfa6;
+h1, [data-title=true], [data-title=bold]{
+    font-weight: bold;
+    color: #05CFA6;
 }

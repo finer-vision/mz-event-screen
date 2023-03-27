@@ -5,9 +5,10 @@ import Two from "@/pages/Two/Two";
 import Three from "@/pages/Three/Three";
 import Four from "@/pages/Four/Four";
 import Five from "@/pages/Five/Five";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { useBackground } from "./stores";
 import { useIdleTimer } from "react-idle-timer";
+import fade from "./motion/fade";
 
 export const DEV = import.meta.env.DEV;
 
@@ -38,7 +39,7 @@ export default function App() {
           }}
           className="w-full grid place-items-center mt-[12%] relative z-[600]"
         >
-        <img className="w-[46%]" src="./logo.svg" />
+        <motion.img {... fade(1)} className="w-[46%]" src="./logo.svg" />
         </div>
         <Routes key={1}>
           <Route path="/" element={<Intro />} />

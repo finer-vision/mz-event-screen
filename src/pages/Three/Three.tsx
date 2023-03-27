@@ -1,4 +1,3 @@
-import Slide from "@/components/Slide";
 import { useBackground } from "@/stores";
 import { motion, useAnimationControls } from "framer-motion";
 import { useEffect } from "react";
@@ -8,6 +7,7 @@ import image2 from "./Image2.png";
 import image3 from "./Image3.png";
 import image4 from "./Image4.png";
 import Overlay from "../../components/Overlay";
+import fade from "@/motion/fade";
 
 const sections = Object.entries({
   collaborate_effectively: image1,
@@ -25,7 +25,7 @@ export default function Three() {
     controls.start((i) => ({
       opacity: 1,
       transition: {
-        delay: i * 0.5,
+        delay: (i * 0.5) + 1,
         duration: 1,
       },
     }));
@@ -37,15 +37,15 @@ export default function Three() {
 
   return (
     <>
-      <Slide className="w-full h-5/6 flex flex-col items-center justify-center gap-[1%] relative z-[100]">
-        <button
+      <div className="w-full h-5/6 flex flex-col items-center justify-center gap-[1%] relative z-[100]">
+        <motion.button {... fade(2)}
           onClick={() => {
             navigate("/2");
           }}
           className="w-10/12"
         >
           <img src="./back.png" alt="" />
-        </button>
+        </motion.button>
         {sections.map(([title, image], i) => {
           return (
             <motion.img
@@ -61,7 +61,7 @@ export default function Three() {
             />
           );
         })}
-      </Slide>
+      </div>
       <Overlay />
     </>
   );

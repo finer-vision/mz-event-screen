@@ -13,7 +13,7 @@ type CarouselProps = {
 }
 
 export default ({items}: CarouselProps) => {
-  const [hoveredItem, setHoveredItem] = useState(-1)
+  const [hoveredItem, setHoveredItem] = useState(0)
   const debounceRef = useRef<boolean>(false)
   const itemRefs = useRef<(HTMLDivElement | null)[]>([])
   const location = useLocation()
@@ -28,14 +28,13 @@ export default ({items}: CarouselProps) => {
   }, [location])
 
   useEffect(() => {
-    if (hoveredItem === -1) return
     itemRefs.current[hoveredItem]?.scrollIntoView({behavior: "smooth", block: 'nearest'})
   }, [hoveredItem])
 
   return (
     <div className="w-full flex justify-center text-white relative z-[100] mb-[10vw]">
       <button 
-      className="w-[5vw] aspect-square mx-5 -translate-y-5"
+      className="w-[5vw] aspect-square mx-[3vw] -translate-y-5"
       onClick={() => {
         if(hoveredItem === 0) return
         setHoveredItem(hoveredItem => hoveredItem - 1)
@@ -44,14 +43,14 @@ export default ({items}: CarouselProps) => {
         <img className="w-full h-full" src="./carousel-left.svg"/>
       </button>
       <div className="w-full flex flex-col items-center">
-        <div className="w-full max-w-[100vw] flex items-center gap-[1vw] overflow-hidden text-white">
+        <div className="w-full max-w-[80vw] flex items-center gap-[1vw] overflow-hidden text-white">
           {items.map((item, i) => {
             return (
               <div 
                 id={`carousel-${i}`}
                 key={i}
                 ref={el => itemRefs.current[i] = el}
-                onClick={() => {
+                onClick={(e) => {
                   navigate(`/5/${title}/${item.title}`)
                 }}
                 onMouseEnter={() => {
@@ -60,7 +59,7 @@ export default ({items}: CarouselProps) => {
                   setHoveredItem(i)
                 }}
                 onMouseLeave={() => debounceRef.current = false}
-                className={`aspect-[2.5] relative cursor-pointer min-w-[50%] max-w-[50%] md:min-w-[50%] md:max-w-[50%] text-white flex items-end
+                className={`aspect-[2.5] relative cursor-pointer min-w-[50%] max-w-[50vw] text-white flex items-end
                 bg-gradient-to-r from-[#05CCA3] via-[#46AFE1] to-[#8085F0]
                 before:content-[''] before:bg-cover
                 ${hoveredItem === i ? `before:w-[calc(100%-.4vw)] after:w-[calc(100%-.4vw)] after:h-[calc(100%-.4vw)]` : `before:w-full after:w-full after:h-full`} before:h-[calc(100%-1.6vw)] before:absolute before:left-1/2 before:top-1/2 before:-translate-x-1/2 before:-translate-y-1/2
@@ -89,7 +88,7 @@ export default ({items}: CarouselProps) => {
         </div>
       </div>
       <button  
-      className="w-[5vw] aspect-square mx-5 -translate-y-5"
+      className="w-[5vw] aspect-square mx-[3vw] -translate-y-5"
       onClick={() => {
         if(hoveredItem === items.length - 1) return
         setHoveredItem(hoveredItem => hoveredItem + 1)

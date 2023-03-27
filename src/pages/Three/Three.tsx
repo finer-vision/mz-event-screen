@@ -10,10 +10,10 @@ import Overlay from "../../components/Overlay";
 import fade from "@/motion/fade";
 
 const sections = Object.entries({
-  collaborate_effectively: image1,
-  public_trust: image2,
-  right_people: image3,
-  working_cultures: image4,
+  collaborate_effectively: image3,
+  public_trust: image1,
+  right_people: image4,
+  working_cultures: image2,
 });
 
 export default function Three() {

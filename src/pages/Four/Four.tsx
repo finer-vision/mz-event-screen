@@ -84,7 +84,7 @@ export default function Four() {
               <Title>{(fullTitles as any)[title as any]}</Title>
               <img className="w-full" src="./page4-text.svg" />
             </div>
-            <img className="w-[40vw]" src="./page4-profile.svg" />
+            <img className="w-[40vw]" src={`./${title}.png`} />
           </div>
           <Carousel items={items} />
           <div className="grid grid-cols-2 w-full px-[3vw] gap-[1vw] h-[3vh] place-items-center place-content-center w-[72%] mx-auto">

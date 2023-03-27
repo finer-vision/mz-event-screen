@@ -48,7 +48,7 @@ export default function Five() {
     <>
       <div className="relative flex flex-col items-center w-full h-full z-[500]">
         <div className="flex flex-col gap-[3%] w-full h-full items-center mt-[10%] relative">
-          <div className="w-full absolute top-0 left-0 px-[5vw]">
+          <div className="w-full absolute top-0 left-0 px-[11vw]">
             <button
                 onClick={() => {
                   navigate(`/4/${title}`);
@@ -64,7 +64,7 @@ export default function Five() {
           <h1 className="text-[5vw] text-center">{content?.title}</h1>
           <div
             dangerouslySetInnerHTML={{ __html: content?.description || "" }}
-            className="text-justify w-full overflow-y-auto overflow-x-hidden h-[20vw] px-[5vw] text-[2vw] flex grow whitespace-pre-wrap"
+            className="custom-scroll text-justify w-[82vw] overflow-y-auto overflow-x-hidden h-[20vw] px-[2vw] text-[2vw] flex grow-[0.6] whitespace-pre-wrap"
           ></div>
           <Carousel items={items} />
         </div>

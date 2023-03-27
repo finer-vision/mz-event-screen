@@ -5,12 +5,14 @@ import axios from "axios";
 import { PageData } from "@/types";
 import { useNavigate, useParams } from "react-router-dom";
 import Overlay from "../../components/Overlay";
+import Title from "./Title";
 
 type Content = {
   title: string;
   description: string;
   video_url: string;
   image_url: string;
+  title2: string;
 };
 
 const URL = import.meta.env.VITE_GH_PAGES === "TRUE" ? "/mz-event-screen/" : "";
@@ -58,7 +60,7 @@ export default function Five() {
               BACK
             </button>
           </div>
-          <img src="./page5-btn.svg" className="w-[47vw]" />
+          <Title>{content?.title2}</Title>
           {!videoExists && (
             <img
               src={`${URL}/database/${title}/${content?.image_url}`}

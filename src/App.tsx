@@ -1,5 +1,4 @@
 import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
-import Intro from "./pages/intro/intro";
 import One from "@/pages/One/One";
 import Two from "@/pages/Two/Two";
 import Three from "@/pages/Three/Three";
@@ -42,7 +41,7 @@ export default function App() {
         <motion.img {... fade(1)} className="w-[46%]" src="./logo.svg" />
         </div>
         <Routes key={1}>
-          <Route path="/" element={<Intro />} />
+          <Route path="/" element={<One />} />
           <Route path="/1" element={<One />} />
           <Route path="/2" element={<Two />} />
           <Route path="/3" element={<Three />} />

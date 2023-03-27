@@ -88,7 +88,7 @@ export default ({ items }: CarouselProps) => {
                 }}
                 className={`relative cursor-pointer text-white flex items-end
                 bg-gradient-to-r from-[#05CCA3] via-[#46AFE1] to-[#8085F0]
-                before:content-[''] before:bg-cover min-w-[20.9vw]
+                before:content-[''] before:bg-cover min-w-[20.9vw] p-[1vw]
                 ${
                   hoveredItem === i
                     ? `h-full before:w-[calc(100%-.4vw)] after:w-[calc(100%-.4vw)] after:h-[calc(100%-.3vw)]`

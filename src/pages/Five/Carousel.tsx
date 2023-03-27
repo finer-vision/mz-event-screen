@@ -32,7 +32,7 @@ export default ({items}: CarouselProps) => {
   }, [hoveredItem])
 
   return (
-    <div className="w-full flex justify-center text-white relative z-[100] mb-[10vw]">
+    <div className="w-[calc(100%-10vw)] flex justify-center text-white relative z-[100] mb-[10vw]">
       <button 
       className="w-[5vw] aspect-square mx-[3vw] -translate-y-5"
       onClick={() => {
@@ -59,10 +59,11 @@ export default ({items}: CarouselProps) => {
                   setHoveredItem(i)
                 }}
                 onMouseLeave={() => debounceRef.current = false}
-                className={`aspect-[2.5] relative cursor-pointer min-w-[50%] max-w-[50vw] text-white flex items-end
+                className={`aspect-[2.5] relative cursor-pointer min-w-[calc(50%-1vw)] max-w-[50vw] text-white flex items-end
                 bg-gradient-to-r from-[#05CCA3] via-[#46AFE1] to-[#8085F0]
-                before:content-[''] before:bg-cover
+                before:content-[''] before:bg-cover 
                 ${hoveredItem === i ? `before:w-[calc(100%-.4vw)] after:w-[calc(100%-.4vw)] after:h-[calc(100%-.4vw)]` : `before:w-full after:w-full after:h-full`} before:h-[calc(100%-1.6vw)] before:absolute before:left-1/2 before:top-1/2 before:-translate-x-1/2 before:-translate-y-1/2
+                before:h-[calc(100%-1.6vw)] before:absolute before:left-1/2 before:top-1/2 before:-translate-x-1/2 before:-translate-y-1/2
                 after:content-[''] after:absolute after:left-1/2 after:top-1/2 after:-translate-x-1/2 after:-translate-y-1/2
                 after:bg-gradient-to-t after:from-black after:to-transparent
                 `}
@@ -81,7 +82,7 @@ export default ({items}: CarouselProps) => {
         <div className="flex gap-5 mt-7">
           {items.map((item, i) => {
             return (
-              <div onClick={() => setHoveredItem(i)}
+              <div key={i} onClick={() => setHoveredItem(i)}
               className={`${hoveredItem === i ? 'bg-[#05CCA3]' : "bg-[#FFFFFF]"} cursor-pointer w-[1vw] translate-y-[2vw] aspect-square rounded-full transition-colors`}></div>
             )})
           }

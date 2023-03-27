@@ -12,6 +12,8 @@ import fade from "./motion/fade";
 
 export const DEV = import.meta.env.DEV;
 
+console.log({DEV});
+
 export default function App() {
   const navigate = useNavigate();
   const location = useLocation();
@@ -22,6 +24,7 @@ export default function App() {
   useIdleTimer({
     timeout: 60000,
     onIdle: () => {
+      if (DEV) return;
       navigate("/1");
     },
   });
@@ -37,7 +40,7 @@ export default function App() {
             e.stopPropagation();
             navigate("/");
           }}
-          className="w-full grid place-items-center mt-[12%] relative z-[600]"
+          className="w-full grid place-items-center mt-[4%] relative z-[600]"
         >
         <motion.img {... fade(1)} className="w-[46%]" src="./logo.svg" />
         </div>

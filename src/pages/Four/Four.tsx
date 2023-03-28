@@ -72,7 +72,7 @@ export default function Four() {
       <div className="relative flex flex-col justify-end items-center w-full h-full z-[90]">
         <motion.div
           {...fade(2)}
-          className="flex flex-col grow gap-[5%] mt-[10%]"
+          className="w-full flex flex-col grow gap-[5%] mt-[10%]"
         >
           <div className="w-full grid grid-cols-2 place-content-center place-items-center">
             <div className="w-full flex flex-col px-[10%] gap-[5vw]">
@@ -92,17 +92,21 @@ export default function Four() {
             <img className="w-[40vw]" src={`./${title}.png`} />
           </div>
           <Carousel items={items} />
-          <div className="grid grid-cols-2 w-full px-[3vw] gap-[1vw] h-[3vh] place-items-center place-content-center w-[72%] mx-auto">
-            <Button width={30} py={3} iconDirection="left" to={`/4/${prevPageId}`}>
+          <div className="grid grid-cols-2 w-full px-[3vw] gap-[3vw] h-[3vh] place-items-center place-content-center w-[72%] mx-auto">
+            <div className="ml-auto">
+              <Button width={20} py={3} iconDirection="left" to={`/4/${prevPageId}`}>
               <span className="whitespace-pre" style={{lineHeight: "1", display:"block"}}>
                 {prevPageTitle}
               </span>
-            </Button>
-            <Button width={30} py={3} iconDirection="right" to={`/4/${nextPageId}`}>
+              </Button>
+            </div>
+            <div className="mr-auto">
+            <Button width={20} py={3} iconDirection="right" to={`/4/${nextPageId}`}>
               <span className="whitespace-pre" style={{lineHeight: "1", display:"block"}}>
                 {nextPageTitle}
               </span>
             </Button>
+            </div>
           </div>
         </motion.div>
         <motion.div

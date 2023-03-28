@@ -69,6 +69,7 @@ export default function Five() {
                              onClick={() => setPlaying(playing => !playing)} ref={videoRef}
                              onEnded={() => setPlaying(false)}
                              src={`${URL}/database/${title}/${content?.video_url}`}
+                             playsInline={true}
                              className="min-w-[86.2vw] min-h-[22vh] max-h-[22vh]"/>
                         {!playing && (<svg
                             className="absolute top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 w-[15vw]"

@@ -3,4 +3,5 @@ export type PageData = {
     description: string
     image_url: string
     video_url: string
+    video_placeholder_url: string
 }

@@ -14,7 +14,7 @@ import topData from "./top-data";
 const fullTitles = {
   public_trust: "Let's build \npublic trust",
   collaborate_effectively: "Let's collaborate \neffectively",
-  right_people: "Let's get the \nright people",
+  right_people: "Let's hire the \nright people",
   working_cultures: "Let's create better \nworking cultures",
 };
 

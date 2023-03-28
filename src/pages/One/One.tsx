@@ -33,6 +33,7 @@ export default function One() {
           muted={true}
           src="./video.webm"
           className="fixed z-10 top-0 left-0 w-screen h-screen"
+          playsInline={true}
         ></video>
         <motion.button {... fade(2)} className="w-[30vw] -mt-[25vw] aspect-square relative z-50">
           <img className="w-full h-full" src={go} />

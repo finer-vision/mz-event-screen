@@ -101,6 +101,7 @@ export default ({ items }: CarouselProps) => {
                 <style>{`
                   #carousel-${i}::before {
                     background-image: url(database/${title}/${item.image_url});
+                    background-position: center;
                   }
                 `}</style>
                 <span className="relative z-10 text-[2vw] p-2">

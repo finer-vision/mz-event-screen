@@ -25,7 +25,7 @@ export default function Three() {
     controls.start((i) => ({
       opacity: 1,
       transition: {
-        delay: (i * 0.5) + 1,
+        delay: i * 0.5 + 1,
         duration: 1,
       },
     }));
@@ -38,14 +38,17 @@ export default function Three() {
   return (
     <>
       <div className="w-full h-5/6 flex flex-col items-center justify-center gap-[1%] relative z-[100]">
-        <motion.button {... fade(2)}
-          onClick={() => {
-            navigate("/2");
-          }}
-          className="w-10/12"
-        >
-          <img src="./back.png" alt="" />
-        </motion.button>
+        <div className="w-10/12 flex">
+          <motion.button
+            {...fade(2)}
+            onClick={() => {
+              navigate("/2");
+            }}
+            className="text-[3vw] px-[2vw] rounded-full bg-gradient-to-r from-[#05CCA3] via-[#46AFE1] to-[#8085F0]"
+          >
+            BACK
+          </motion.button>
+        </div>
         {sections.map(([title, image], i) => {
           return (
             <motion.img

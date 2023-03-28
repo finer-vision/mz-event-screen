@@ -50,12 +50,12 @@ html {
   z-index: 0;
   top: 50%;
   left: 50%;
-  background-image: url("./circle-inner4.svg");
+  background-image: url("/circle-inner-5.svg");
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: contain;
-  width: 100%;
-  height: 95%;
+  width: 85%;
+  height: 100%;
   transform: translate(-50%, -50%);
   clip-path: polygon(50% 0, 50% 0, 50% 100%, 50% 100%);
   z-index: 10;

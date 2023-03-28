@@ -1,7 +1,6 @@
 [
   {
     "title": "Eon - Future Strategy Launch",
-    "image_url2": "",
     "image_url": "image_1.png",
     "video_url": "video_1.mp4",
     "description": "We were contracted by Eon Next to help launching a new strategy to  78,000 people.\n\nAs part of this we  created an engaging and emotive film that reflected the passion, opinions and perspectives of E.ON’s colleagues and customers. Using authentic, honest and humorous interviews, shot in real home and work environments, the films had maximum relatability and impact.\n\nWe also created line manager led activities designed to draw out the practical actions each individual can make in order to drive the development of the business in the future. Teams were asked to celebrate and share their past achievements and drive excitement about the future possibilities.\n\nIn just three weeks, 90% of the audience had engaged with the hero content and completed the activities with their line manager. 94% agreed that they had a clear understanding of E.ON’s strategic direction.",
@@ -9,7 +8,6 @@
   },
   {
     "title": "Meta - OCP Event",
-    "image_url2": "",
     "image_url": "image_2.png",
     "video_url": "video_3.mp4",
     "description": "Meta developed several interactive experiences to showcase their latest hardware designs at the Open Compute Project. These included large touchscreens, a quiz, a schedule, a web/VR/Google Cardboard 360 environment, and an augmented reality experience. Meta also provided an A5 booklet with QR codes to trigger the AR experience at home. These interactive experiences successfully showcased Meta's latest hardware designs in an engaging and immersive way, extending the reach of the event.",
@@ -17,7 +15,6 @@
   },
   {
     "title": "Dell - Virtual Escape Room",
-    "image_url2": "",
     "image_url": "image_3.png",
     "video_url": "video_2.mp4",
     "description": "We designed and developed a virtual escape room for Dell to educate users on cyber security through a 3D model and VR/Web experience. The escape room consisted of 5 activities and a quiz, with an AI avatar setting the scene. The VR version was used at a global tour and the web version was available for remote events and as a takeaway.\n\nWe also created a VR headset guide to help local teams use the technology. Metrics helped Dell understand the popularity and impact of the game on their brand reputation.",
@@ -25,8 +22,7 @@
   },
   {
     "title": "360 Experiences",
-    "image_url2": "",
-    "image_url": "image_4.png",
+    "image_url": "image_5.png",
     "video_url": "video_5.mp4",
     "description": "Our 360 degree virtual reality and web experiences transport people to new locations and offer valuable learning opportunities about your culture, strategy, brand, and more. Whether you're hosting an event, sharing product knowledge, onboarding new hires, or connecting your people, our immersive experiences make a difference. With user controls, we guide participants towards specific information and purpose-driven activities, using 360 degree cameras to capture environments and build interactive, multimedia experiences. Our approach allows us to gamify and engage users in ways that traditional training cannot match.",
     "title2": "LEARNING"

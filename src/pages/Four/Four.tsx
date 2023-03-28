@@ -9,6 +9,7 @@ import Title from "./Title";
 import Overlay from "../../components/Overlay";
 import { motion } from "framer-motion";
 import fade from "@/motion/fade";
+import topData from "./top-data";
 
 const fullTitles = {
   public_trust: "Let's build \npublic trust",
@@ -87,7 +88,9 @@ export default function Four() {
                 </button>
               </div>
               <Title>{(fullTitles as any)[title as any]}</Title>
-              <img className="w-full" src="./page4-text.svg" />
+              <div className="w-full h-[16vh]">
+                {topData[title as any].content}
+              </div>
             </div>
             <img className="w-[40vw]" src={`./${title}.png`} />
           </div>

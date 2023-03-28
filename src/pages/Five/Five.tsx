@@ -53,10 +53,10 @@ export default function Five() {
         <div className="flex flex-col gap-[3%] w-full h-full items-center mt-[10%]">
           <div className="w-10/12 flex">
             <button
-              onClick={() => {
-                navigate(`/4/${title}`);
-              }}
-              className="text-[3vw] px-[2vw] rounded-full bg-gradient-to-r from-[#05CCA3] via-[#46AFE1] to-[#8085F0]"
+                onClick={() => {
+                  navigate(`/3`);
+                }}
+                className="text-[3vw] px-[2vw] rounded-full bg-gradient-to-r from-[#05CCA3] via-[#46AFE1] to-[#8085F0]"
             >
               BACK
             </button>

@@ -14,13 +14,14 @@ jobs:
         with:
           persist-credentials: false
           lfs: true
-          
+
       - name: Install and Build 🔧
         env:
           PUBLIC_PATH: ./
         run: |
           npm install
-          cp .env.prod.example .env
+          echo "VITE_GH_PAGES=TRUE" > .env
+          echo "https://mz-event-screen.stg.finervision.com" >> .env
           git lfs pull
           npm run build
       - name: Deploy 🚀

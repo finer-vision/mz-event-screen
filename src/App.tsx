@@ -13,7 +13,7 @@ import React from "react";
 
 export const DEV = import.meta.env.DEV;
 
-console.log({DEV});
+console.log({ DEV });
 
 export default function App() {
   const navigate = useNavigate();
@@ -23,7 +23,7 @@ export default function App() {
   const path = location.pathname;
 
   useIdleTimer({
-    timeout: 60000*3,
+    timeout: 60000 * 3,
     onIdle: () => {
       // if (DEV) return;
       navigate("/1");
@@ -48,7 +48,7 @@ export default function App() {
     audio.src = bg;
     audio.loop = true;
     audio.volume = 0.01;
-    audio.play().catch(err => console.error(err));
+    audio.play().catch((err) => console.error(err));
   }, [interacted]);
 
   return (
@@ -64,7 +64,7 @@ export default function App() {
           }}
           className="w-full grid place-items-center mt-[4%] relative z-[600]"
         >
-        <motion.img {... fade(1)} className="w-[46%]" src="./logo.svg" />
+          <motion.img {...fade(1)} className="w-[46%]" src="./logo.svg" />
         </div>
         <Routes key={1}>
           <Route path="/" element={<One />} />

@@ -1,10 +1,13 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import './index.css'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
-import App from './App';
+import App from "./App";
+import offlineSync from "@/services/offline-sync";
 
-ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+offlineSync.start();
+
+ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <Router>
       <Routes>
@@ -12,4 +15,4 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       </Routes>
     </Router>
   </React.StrictMode>,
-)
+);

@@ -1,5 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import offlineSync from "@/services/offline-sync";
+import { SurveyData } from "@/types";
 
 const questions: string[] = [
   "[1] Lorem ipsum dolor sit amet, consectetur \nadipiscing elit, sed do eiusmod tempor?",
@@ -29,7 +31,13 @@ export default function Two() {
     setRotation(0);
     const nextQuestionIndex = questionIndex + 1;
     if (nextQuestionIndex > questions.length - 1) {
-      console.log(answersRef.current);
+      offlineSync
+        .save<SurveyData>("surveys", {
+          answers: answersRef.current,
+          createdAt: new Date().toISOString(),
+        })
+        .then(() => console.log("survey saved"))
+        .catch(console.error);
       return navigate("/3");
     }
     setQuestionIndex(nextQuestionIndex);

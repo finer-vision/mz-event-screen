@@ -1,0 +1,27 @@
+name: Deploy UAT
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - package.json
+      - package-lock.json
+      - server.js
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy
+        uses: garygrossgarten/github-action-ssh@release
+        with:
+          command: |
+            cd /var/www/sites/mz-event-screen
+            git pull
+            npm install
+            npm run build
+            pm2 reload mz-event-screen
+          host: ${{ secrets.AWS_UAT_HOST }}
+          username: ${{ secrets.AWS_UAT_USERNAME }}
+          privateKey: ${{ secrets.AWS_UAT_PRIVATE_KEY }}

@@ -1,9 +1,19 @@
-name: Deploy
+name: GH Pages
 
 on:
   push:
     branches:
       - main
+    paths:
+      - package.json
+      - package-lock.json
+      - .github/workflows/gh-pages.yml
+      - vite.config.ts
+      - tsconfig.json
+      - tailwind.config.cjs
+      - index.html
+      - src/**
+      - public/**
 
 jobs:
   build-and-deploy:

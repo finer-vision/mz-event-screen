@@ -47,6 +47,37 @@ database
         credentials: true,
       }),
     );
+    app.get("/api/export/surveys", async (req, res) => {
+      try {
+        const surveys = await Survey.findAll();
+        const headers = [
+          "uuid",
+          "answers",
+          "created (UTC)",
+          "hostname",
+          "mode",
+          "synced (UTC)",
+        ];
+        const rows = surveys.map((survey) => {
+          return [
+            survey.uuid,
+            survey.answers.join(","),
+            survey.deviceCreatedAt,
+            survey.hostname,
+            survey.mode,
+            survey.createdAt,
+          ];
+        });
+        const csv = [headers.join(","), rows.join("\n")].join("\n");
+        res
+          .header("Content-Type", "text/csv")
+          .attachment("surveys.csv")
+          .send(csv);
+      } catch (err) {
+        console.error(err);
+        res.status(500).send("Failed to export surveys");
+      }
+    });
     app.post("/api/sync-entries", async (req, res) => {
       try {
         if (!Array.isArray(req.body.entries)) {

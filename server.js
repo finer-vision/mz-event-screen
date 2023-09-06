@@ -61,7 +61,7 @@ database
         const rows = surveys.map((survey) => {
           return [
             survey.uuid,
-            JSON.parse(survey.answers).join(","),
+            `"${survey.answers.join(",")}"`,
             survey.deviceCreatedAt,
             survey.hostname,
             survey.mode,

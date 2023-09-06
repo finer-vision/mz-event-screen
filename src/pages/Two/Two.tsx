@@ -9,11 +9,6 @@ const questions: string[] = [
   "[5] Lorem ipsum dolor sit amet, consectetur \nadipiscing elit, sed do eiusmod tempor?",
 ];
 
-type Answers = Array<{
-  question: string;
-  answer: number;
-}>;
-
 export default function Two() {
   const navigate = useNavigate();
 
@@ -21,16 +16,17 @@ export default function Two() {
   const [questionIndex, setQuestionIndex] = React.useState(0);
   const [answer, setAnswer] = React.useState(0);
 
-  const answersRef = React.useRef<Answers>([]);
+  const answersRef = React.useRef<number[]>([]);
 
   const inputRef = React.useRef<HTMLInputElement>(null);
 
   const submit = React.useCallback(() => {
     const input = inputRef.current;
     if (input === null) return;
-    answersRef.current.push({ question: questions[questionIndex], answer });
+    answersRef.current.push(answer);
     input.value = "0";
     setAnswer(0);
+    setRotation(0);
     const nextQuestionIndex = questionIndex + 1;
     if (nextQuestionIndex > questions.length - 1) {
       console.log(answersRef.current);

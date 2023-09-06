@@ -7,6 +7,13 @@ on:
     paths:
       - package.json
       - package-lock.json
+      - .github/workflows/gh-pages.yml
+      - vite.config.ts
+      - tsconfig.json
+      - tailwind.config.cjs
+      - index.html
+      - src/**
+      - public/**
       - server.js
 
 jobs:

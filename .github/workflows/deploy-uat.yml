@@ -7,7 +7,7 @@ on:
     paths:
       - package.json
       - package-lock.json
-      - .github/workflows/gh-pages.yml
+      - .github/workflows/deploy-uat.yml
       - vite.config.ts
       - tsconfig.json
       - tailwind.config.cjs

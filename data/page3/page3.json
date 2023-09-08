@@ -1,0 +1,23 @@
+[
+  {
+    "title": "Scenario Game",
+    "image_url": "image_1.png",
+    "video_url": "video_1.mp4",
+    "description": "In this interactive, true-to-role scenario-based game we placed the learners in the role of “investigator” where they ae required to identify and analyse the financial crime risks in a range of complex customer scenarios. It allows learners to practice the behaviours required to check client documentation and synthesise information to inform the decisions they will make about onboarding a new client.",
+    "title2": "GLOBAL RISK"
+  },
+  {
+    "title": "Opening Film",
+    "image_url": "image_2.png",
+    "video_url": "video_2.mp4",
+    "description": "This solution uses a high impact opening film that leavers viewers in no doubt about the reputational damage that any perceived tax evasion would have on the business. We then used a series of scenarios to bring to life the complexities of the new legislation, giving learners an opportunity to understand the law through practice.",
+    "title2": "DAC 6"
+  },
+  {
+    "title": "Personalised Training",
+    "image_url": "image_3.png",
+    "video_url": "video_3.mp4",
+    "description": "This high-impact trailer was used to market a full portal of personalised conduct training. It harnesses snippets of real colleague conduct stories, demonstrating the emotional journey of people who have raised conduct concerns about themselves or others. It instantly demonstrates a commitment to a positive conduct culture and set the tone for the rest of the programme.",
+    "title2": "CONDUCT"
+  }
+]

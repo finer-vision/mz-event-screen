@@ -33,7 +33,7 @@ export default ({items}: CarouselProps) => {
   }, [hoveredItem])
 
   return (
-    <div className="w-[calc(100%-10vw)] flex justify-center text-white relative z-[100] mb-[10vw]">
+    <div className={`${items.length === 1 && 'invisible'} w-[calc(100%-10vw)] flex justify-center text-white relative z-[100] mb-[10vw]`}>
       <button 
       className="w-[5vw] aspect-square mx-[3vw] -translate-y-5"
       onClick={() => {
@@ -71,7 +71,7 @@ export default ({items}: CarouselProps) => {
               > 
                 <style>{`
                   #carousel-${i}::before {
-                    background-image: url(database/${title}/${item.image_url});
+                    background-image: url(data/${title}/${item.image_url});
                     background-position: center;
                   }
                 `}</style>

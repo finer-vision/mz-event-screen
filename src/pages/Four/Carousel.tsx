@@ -53,7 +53,7 @@ export default ({ items }: CarouselProps) => {
   return (
     <div className="w-full flex justify-center text-white">
       <button
-        className="max-w-[6vw] aspect-square mx-5 -translate-y-5"
+        className={`${items.length === 1 && 'invisible'} max-w-[6vw] aspect-square mx-5 -translate-y-5`}
         onClick={() => {
           if (hoveredItem === 0) return;
           setHoveredItem((hoveredItem) => hoveredItem - 1);
@@ -100,7 +100,7 @@ export default ({ items }: CarouselProps) => {
               >
                 <style>{`
                   #carousel-${i}::before {
-                    background-image: url(database/${title}/${item.image_url});
+                    background-image: url(data/${title}/${item.image_url});
                     background-position: center;
                   }
                 `}</style>
@@ -119,14 +119,16 @@ export default ({ items }: CarouselProps) => {
                 onClick={() => setHoveredItem(i)}
                 className={`${
                   hoveredItem === i ? "bg-[#05CCA3]" : "bg-[#FFFFFF]"
-                } cursor-pointer w-[2vw] aspect-square rounded-full transition-colors`}
+                } 
+                ${items.length === 1 && 'invisible'}
+                cursor-pointer w-[2vw] aspect-square rounded-full transition-colors`}
               ></div>
             );
           })}
         </div>
       </div>
       <button
-        className="max-w-[6vw] aspect-square mx-[2vw] -translate-y-5"
+        className={`${items.length === 1 && 'invisible'} max-w-[6vw] aspect-square mx-[2vw] -translate-y-5`}
         onClick={() => {
           if (hoveredItem === items.length - 1) return;
           setHoveredItem((hoveredItem) => hoveredItem + 1);

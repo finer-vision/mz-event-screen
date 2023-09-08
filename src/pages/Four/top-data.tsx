@@ -1,56 +1,41 @@
+import topDataContent1 from "./top-data-content1.svg"
+import topDataContent2 from "./top-data-content2.svg"
+import topDataContent3 from "./top-data-content3.svg"
+import topDataContent4 from "./top-data-content4.svg"
+
 export default {
-  public_trust: {
+  page1: {
     content: (
       <>
         <div className="text-[#05CFA6] font-bold flex flex-col text-[2vw] w-full">
-          <div>Emotive content films, podcasts, digital and experiential</div>
-          <div> Branded Content</div>
-          <div> Crisis comms</div>
-          <div> News announcements</div>
-          <div> Media training</div>
-          <div> Reputation management</div>
-          <div> Storytelling courses</div>
-          <div> Learning</div>
+          <img className="aspect-[501/620] w-[65%]" src={topDataContent1}/>
         </div>
       </>
     ),
   },
-  right_people: {
+  page2: {
     content: (
       <>
         <div className="text-[#05CFA6] font-bold flex flex-col text-[2vw] w-full">
-          <div>Recruitment advertising</div>
-          <div> Onboarding e-platforms, communications and learning </div>
+          <img className="aspect-[775/620] w-full" src={topDataContent2}/>
         </div>
       </>
     ),
   },
-  working_cultures: {
+  page3: {
     content: (
       <>
         <div className="text-[#05CFA6] font-bold flex flex-col text-[2vw] w-full">
-          <div>Insights reports and Discovery workshops</div>
-          <div> Internal Communications</div>
-          <div> Building Networks</div>
-          <div> Diversity champions / influencers</div>
-          <div> Microaggressions</div>
-          <div> Bullying</div>
-          <div> Disability awareness</div>
-          <div> Speak Up programmes</div>
-          <div> Unconscious Bias</div>
+          <img className="aspect-[625/694] w-[77%]" src={topDataContent3}/>
         </div>
       </>
     ),
   },
-  collaborate_effectively: {
+  page4: {
     content: (
       <>
         <div className="text-[#05CFA6] font-bold flex flex-col text-[2vw] w-full">
-          <div>Leadership workshops</div>
-          <div> Learning programmes</div>
-          <div> Crisis comms</div>
-          <div> Creative consulting creative thinking for problem solving</div>
-          <div> Internal Communications</div>
+          <img className="aspect-[625/694] w-[73%]" src={topDataContent4}/>
         </div>
       </>
     ),

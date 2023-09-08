@@ -12,10 +12,10 @@ import fade from "@/motion/fade";
 import topData from "./top-data";
 
 const fullTitles = {
-  public_trust: "Let's build \npublic trust",
-  collaborate_effectively: "Let's collaborate \neffectively",
-  right_people: "Let's hire the \nright people",
-  working_cultures: "Let's create better \nworking cultures",
+  page1: `Induction &\nOnboarding`,
+  page2: `Transformation &\nInnovation`,
+  page3: `Mandatory &\nESG`,
+  page4: `DEIB &\nLeadership`
 };
 
 const URL = import.meta.env.VITE_GH_PAGES === "TRUE" ? "/mz-event-screen/" : "";
@@ -27,8 +27,9 @@ export default function Four() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get(`${URL}database/${title}/${title}.json`).then((res) => {
+    axios.get(`${URL}data/${title}/${title}.json`).then((res) => {
       setItems(res.data);
+      console.log(res.data)
     });
   }, [title]);
 
@@ -37,28 +38,28 @@ export default function Four() {
     try {
       return Object.entries(fullTitles)[currentPage + 1][1];
     } catch {
-      return fullTitles["public_trust"];
+      return fullTitles["page1"];
     }
   })();
   const nextPageId = (() => {
     try {
       return Object.entries(fullTitles)[currentPage + 1][0];
     } catch {
-      return "public_trust";
+      return "page1";
     }
   })();
   const prevPageTitle = (() => {
     try {
       return Object.entries(fullTitles)[currentPage - 1][1];
     } catch {
-      return fullTitles["working_cultures"];
+      return fullTitles["page4"];
     }
   })();
   const prevPageId = (() => {
     try {
       return Object.entries(fullTitles)[currentPage - 1][0];
     } catch {
-      return "working_cultures";
+      return "page4";
     }
   })();
 

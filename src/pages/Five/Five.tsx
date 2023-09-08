@@ -34,7 +34,7 @@ export default function Five() {
 
     useEffect(() => {
         setPlaying(false);
-        axios.get(`${URL}database/${title}/${title}.json`).then((res) => {
+        axios.get(`${URL}data/${title}/${title}.json`).then((res) => {
             setItems(res.data);
             setContent(res.data.find((item: Content) => item.title === id));
         });
@@ -63,13 +63,13 @@ export default function Five() {
                         </button>
                     </div>
                     <Title>{content?.title2}</Title>
-                    {!videoExists && <img src={`${URL}/database/${title}/${content?.video_placeholder_url}`}
+                    {!videoExists && <img src={`${URL}/data/${title}/${content?.video_placeholder_url}`}
                                           className="min-w-[86.2vw] min-h-[22vh] max-h-[22vh]"/>}
                     {videoExists && <div className="relative min-w-[86.2vw] min-h-[22vh] max-h-[22vh]">
-                      <video poster={`${URL}/database/${title}/${content?.video_placeholder_url}`}
+                      <video poster={`${URL}/data/${title}/${content?.video_placeholder_url}`}
                              onClick={() => setPlaying(playing => !playing)} ref={videoRef}
                              onEnded={() => setPlaying(false)}
-                             src={`${URL}/database/${title}/${content?.video_url}`}
+                             src={`${URL}/data/${title}/${content?.video_url}`}
                              playsInline={true}
                              className="min-w-[86.2vw] min-h-[22vh] max-h-[22vh]"/>
                         {!playing && (<svg

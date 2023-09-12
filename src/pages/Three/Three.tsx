@@ -33,20 +33,23 @@ export default function Three() {
     ) as number[];
     // Remove last answer
     answers.pop();
-    return answers
-      .map((answer, index) => {
-        const answerIndex = index as keyof typeof answerIndexToSectionTitle;
-        const title = answerIndexToSectionTitle[answerIndex];
-        const image = title as keyof typeof sectionTitleImage;
-        return {
-          answer,
-          title,
-          image: sectionTitleImage[image],
-        };
-      })
-      .sort((a, b) => {
-        return b.answer - a.answer;
-      });
+    return (
+      answers
+        .map((answer, index) => {
+          const answerIndex = index as keyof typeof answerIndexToSectionTitle;
+          const title = answerIndexToSectionTitle[answerIndex];
+          const image = title as keyof typeof sectionTitleImage;
+          return {
+            answer,
+            title,
+            image: sectionTitleImage[image],
+          };
+        })
+        // Order by answer lowest to highest
+        .sort((a, b) => {
+          return a.answer - b.answer;
+        })
+    );
   }, []);
 
   useEffect(() => {

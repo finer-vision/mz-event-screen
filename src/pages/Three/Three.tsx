@@ -1,6 +1,6 @@
 import { useBackground } from "@/stores";
 import { motion, useAnimationControls } from "framer-motion";
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import image1 from "./Image1.png";
 import image2 from "./Image2.png";
@@ -9,19 +9,48 @@ import image4 from "./Image4.png";
 import Overlay from "../../components/Overlay";
 import fade from "@/motion/fade";
 
-const sections = Object.entries({
-  page3: image3,
-  page1: image1,
-  page4: image4,
-  page2: image2,
-});
+const answerIndexToSectionTitle = {
+  0: "page1",
+  1: "page2",
+  2: "page3",
+  3: "page4",
+};
 
 export default function Three() {
-  const { setBackground } = useBackground();
+  const setBackground = useBackground((state) => state.setBackground);
   const navigate = useNavigate();
   const controls = useAnimationControls();
 
+  const sections = useMemo(() => {
+    const sectionTitleImage = {
+      page3: image3, // Mandatory & ESG
+      page1: image1, // Induction & Onboarding
+      page4: image4, // DEIB & Leadership
+      page2: image2, // Transformation & Innovation
+    };
+    const answers = JSON.parse(
+      localStorage.getItem("mz-event-screen") ?? "[]",
+    ) as number[];
+    // Remove last answer
+    answers.pop();
+    return answers
+      .map((answer, index) => {
+        const answerIndex = index as keyof typeof answerIndexToSectionTitle;
+        const title = answerIndexToSectionTitle[answerIndex];
+        const image = title as keyof typeof sectionTitleImage;
+        return {
+          answer,
+          title,
+          image: sectionTitleImage[image],
+        };
+      })
+      .sort((a, b) => {
+        return b.answer - a.answer;
+      });
+  }, []);
+
   useEffect(() => {
+    // localStorage.removeItem("mz-event-screen");
     controls.start((i) => ({
       opacity: 1,
       transition: {
@@ -49,18 +78,18 @@ export default function Three() {
             BACK
           </motion.button>
         </div>
-        {sections.map(([title, image], i) => {
+        {sections.map((section, index) => {
           return (
             <motion.img
+              key={index}
               onClick={() => {
-                navigate(`/4/${title}`);
+                navigate(`/4/${section.title}`);
               }}
               initial={{ opacity: 0 }}
-              custom={i}
+              custom={index}
               animate={controls}
               className="lg:my-5 xl:my-10"
-              key={i}
-              src={image}
+              src={section.image}
             />
           );
         })}

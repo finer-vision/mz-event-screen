@@ -13,8 +13,6 @@ import React from "react";
 
 export const DEV = import.meta.env.DEV;
 
-console.log({ DEV });
-
 export default function App() {
   const navigate = useNavigate();
   const location = useLocation();

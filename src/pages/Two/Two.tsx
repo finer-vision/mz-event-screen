@@ -4,11 +4,11 @@ import offlineSync from "@/services/offline-sync";
 import { SurveyData } from "@/types";
 
 const questions: string[] = [
-  "[1] Lorem ipsum dolor sit amet, consectetur \nadipiscing elit, sed do eiusmod tempor?",
-  "[2] Lorem ipsum dolor sit amet, consectetur \nadipiscing elit, sed do eiusmod tempor?",
-  "[3] Lorem ipsum dolor sit amet, consectetur \nadipiscing elit, sed do eiusmod tempor?",
-  "[4] Lorem ipsum dolor sit amet, consectetur \nadipiscing elit, sed do eiusmod tempor?",
-  "[5] Lorem ipsum dolor sit amet, consectetur \nadipiscing elit, sed do eiusmod tempor?",
+  "Our induction and onboarding are personalised and give new joiners ownership of their journey.",
+  "My team creates content at pace, and they are ready to embrace technology like AI.",
+  "Our compliance programmes are effective and are respected by all because they are central to our purpose and values.",
+  "Our leaders are truly inclusive and create a culture of psychological safety that enables everyone the time they need to learn.",
+  "Our skills content is bite-sized, blended, personalised and communicated effectively.",
 ];
 
 export default function Two() {
@@ -31,6 +31,7 @@ export default function Two() {
     setRotation(0);
     const nextQuestionIndex = questionIndex + 1;
     if (nextQuestionIndex > questions.length - 1) {
+      localStorage.setItem("mz-event-screen", JSON.stringify(answersRef.current));
       offlineSync
         .save<SurveyData>("surveys", {
           answers: answersRef.current,
@@ -57,7 +58,7 @@ export default function Two() {
         <div className="w-[86vw] aspect-[1853/483] whitespace-pre-wrap mt-[6%] text-[3.7vw] text-center">
           {questions[questionIndex]}
         </div>
-        <div className="w-[64vw] pt-[9vw] relative">
+        <div className="w-[64vw] pt-[5vw] mt-[5vw] relative">
           <svg
             className="w-[100%] h-auto absolute top-0 left-0"
             width="1421"

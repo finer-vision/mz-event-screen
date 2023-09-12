@@ -8,11 +8,9 @@ import offlineSync from "@/services/offline-sync";
 offlineSync.start();
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
-  <React.StrictMode>
-    <Router>
-      <Routes>
-        <Route path="/*" element={<App />} />
-      </Routes>
-    </Router>
-  </React.StrictMode>,
+  <Router>
+    <Routes>
+      <Route path="/*" element={<App />} />
+    </Routes>
+  </Router>,
 );

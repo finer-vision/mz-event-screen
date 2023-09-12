@@ -266,7 +266,7 @@ export default function Two() {
             </defs>
           </svg>
         </button>
-        <button onClick={() => navigate("/3")} className="mt-[5vw]">Skip</button>
+        <button onClick={() => navigate("/3")} className="mt-[5vw] scale-[1.5]">Skip</button>
       </div>
     </>
   );

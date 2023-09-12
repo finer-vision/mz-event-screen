@@ -1,9 +1,23 @@
 [
   {
     "title": "Welcome Event",
-    "image_url": "image_1.png",
-    "video_url": "video_1.mp4",
+    "image_url": "dlg.png",
+    "video_placeholder_url": "dlg-main.png",
     "description": "In partnership with DLG we created a virtual, scaleable and beautifully branded ‘DLG Welcome event’ to create excitement, equip new starters with the right information to set them up for success in their careers, and give participants the feeling they had made the right choice joining DLG.\n\nThe virtual session activities hinged on the themes of DLGs new behaviours, which enabled new starters to really take on board this learning from their first days at DLG.",
     "title2": "DLG"
+  },
+  {
+    "title": "Onboarding Framework",
+    "image_url": "contract-center-onboarding.png",
+    "video_placeholder_url": "contract-center-main.png",
+    "description": "In partnership with DLG we created a virtual, scaleable and beautifully branded ‘DLG Welcome event’ to create excitement, equip new starters with the right information to set them up for success in their careers, and give participants the feeling they had made the right choice joining DLG.\n\nThe virtual session activities hinged on the themes of DLGs new behaviours, which enabled new starters to really take on board this learning from their first days at DLG.",
+    "title2": "Contact Centre Onboarding"
+  },
+  {
+    "title": "Blended, Personalised Onboarding",
+    "image_url": "emotive-content.png",
+    "video_placeholder_url": "emotive-content-main.png",
+    "description": "The bank hires around 1800 new starters a year. Historically, all branch induction courses were residential, asking people to stay away from home for 5+ weeks. \u2028\u2028We created a virtual, blended solution that both increased the effectiveness of the new starter journey and reduced costs to the business. The programme integrated core learning modules into the working lives of the new starter and they we able to remain in their new branch, amongst their peers supporting their learning journey on a practical level with social learning.\u2028\nThe new model for all 10 Branch roles included In-branch activities, digital content & games, film & animation, PDFs, reflection time, coaching & 121s (in branch & virtual), webinars and virtual observations for legal sign off.",
+    "title2": "VIRTUAL ACADEMIES"
   }
 ]

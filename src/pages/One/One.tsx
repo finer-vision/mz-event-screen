@@ -35,7 +35,7 @@ export default function One() {
           className="fixed z-10 top-0 left-0 w-screen h-screen"
           playsInline={true}
         ></video>
-        <Logos when={3} className="!absolute left-1/2 -translate-x-1/2 bottom-[5vw]" src="./page2logos.svg" />
+        <Logos when={3} className="!absolute left-1/2 -translate-x-1/2 bottom-[5vw]" src="./page2logos.png" />
       </div>
       <Overlay handleClick={handleNextPage} />
     </>

@@ -119,7 +119,7 @@ export default function Four() {
         >
           OUR CLIENTS<span className="text-[rgb(14,207,166)]">.</span>
         </motion.div>
-        <Logos when={3} className="mb-[7%]" src="./page2logos.svg" />
+        <Logos when={3} className="mb-[7%]" src="./page2logos.png" />
         <div className="absolute bottom-0 w-full h-1/5 bg-gradient-to-t from-black/50 to-transparent"></div>
       </div>
       <Overlay />

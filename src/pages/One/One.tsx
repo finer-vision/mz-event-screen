@@ -35,9 +35,6 @@ export default function One() {
           className="fixed z-10 top-0 left-0 w-screen h-screen"
           playsInline={true}
         ></video>
-        <motion.button {... fade(2)} className="w-[30vw] -mt-[25vw] aspect-square relative z-50">
-          <img className="w-full h-full" src={go} />
-        </motion.button>
         <Logos when={3} className="!absolute left-1/2 -translate-x-1/2 bottom-[5vw]" src="./page2logos.svg" />
       </div>
       <Overlay handleClick={handleNextPage} />

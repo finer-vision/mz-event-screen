@@ -27,11 +27,21 @@
         transform-origin: 0 0;
         position: absolute;
         left: 50%;
-        transform: scale(calc(1366 / 3840)) translateX(-50%);
+        transform: scale(calc(var(--height) / 3840)) translateX(-50%);
       }
     </style>
   </head>
   <body>
-    <iframe src="https://mz-event-screen.stg.finervision.com/"> </iframe>
+    <iframe id="app" src="https://mz-event-screen.stg.finervision.com/">
+    </iframe>
+    <script>
+      function setHeight() {
+        const app = document.querySelector("#app");
+        if (app === null) return;
+        app.style.setProperty("--height", `${window.innerHeight}px`);
+      }
+      setHeight();
+      window.addEventListener("resize", () => setHeight());
+    </script>
   </body>
 </html>

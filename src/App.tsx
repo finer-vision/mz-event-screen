@@ -40,14 +40,14 @@ export default function App() {
     };
   }, []);
 
-  React.useEffect(() => {
-    if (!interacted) return;
-    const audio = new Audio();
-    audio.src = bg;
-    audio.loop = true;
-    audio.volume = 0.01;
-    audio.play().catch((err) => console.error(err));
-  }, [interacted]);
+  // React.useEffect(() => {
+  //   if (!interacted) return;
+  //   const audio = new Audio();
+  //   audio.src = bg;
+  //   audio.loop = true;
+  //   audio.volume = 0.01;
+  //   audio.play().catch((err) => console.error(err));
+  // }, [interacted]);
 
   return (
     <AnimatePresence>

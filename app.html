@@ -38,7 +38,7 @@
       function setHeight() {
         const app = document.querySelector("#app");
         if (app === null) return;
-        app.style.setProperty("--height", `${window.innerHeight}px`)
+        app.style.setProperty("--height", `${window.innerHeight}`)
       }
       setHeight();
       window.addEventListener("resize", () => setHeight())

@@ -65,12 +65,12 @@ export default function App() {
           <motion.img {...fade(1)} className="w-[46%]" src="./logo.svg" />
         </div>
         <Routes key={1}>
-          <Route path="/" element={<One />} />
           <Route path="/1" element={<One />} />
           <Route path="/2" element={<Two />} />
           <Route path="/3" element={<Three />} />
           <Route path="/4/:title" element={<Four />} />
           <Route path="/5/:title/:id" element={<Five />} />
+          <Route path="*" element={<One />} />
         </Routes>
       </div>
     </AnimatePresence>

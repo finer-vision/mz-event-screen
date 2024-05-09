@@ -31,7 +31,7 @@ export default function One() {
           autoPlay={true}
           loop={true}
           muted={true}
-          src="./video.webm"
+          src="./video.mp4"
           className="fixed z-10 top-0 left-0 w-screen h-screen"
           playsInline={true}
         ></video>

@@ -1,5 +1,19 @@
 [
   {
+    "title": "Generative AI - Fundamentals and Service Integration",
+    "image_url": "ai.png",
+    "video_placeholder_url": "ai.png",
+    "description": "An introduction to Gen AI, the essential themes, ethics considerations and potential use cases. This includes:\n\n1. Essential themes of GenAI:\n• Understand what GenAI is and how it differs from other AI approaches.\n• Explore the history of AI and GenAI's role in the bigger picture.\n• Learn key concepts like neural networks, deep learning, and generative models.\n\n2. GenAI Ethics:\n• Explore evolving legal issues surrounding AI.\n• Learn how to address bias and ensure ethical use of GenAI.\n• Understand real-world experiences of deploying AI in organisations.\n\n3. Scoping GenAI Use Cases:\n• Identify real-world applications of GenAI across different industries\n• Explore specific examples relevant to the public sector.",
+    "title2": "Generative AI - Fundamentals and Service Integration"
+  },
+  {
+    "title": "People Powered Transformation",
+    "image_url": "ppt.jpg",
+    "video_placeholder_url": "ppt.jpg",
+    "description": "Our unique approach to crafting content that will support behaviour change. Our human-centric transformation programmes are based on an evolving narratives that:\n\n• Delivers the ADKAR model\n• Supports McKinsey’s 24 actions of transformation\n• Manages emotions throughout transformation",
+    "title2": "People Powered Transformation"
+  },
+  {
     "title": "Scenario Game",
     "image_url": "scenario-game.png",
     "video_placeholder_url": "scenario-game.png",

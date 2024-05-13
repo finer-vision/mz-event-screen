@@ -103,7 +103,7 @@ export default function Four() {
                 to={`/4/${prevPageId}`}
               >
                 <span
-                  className="whitespace-pre py-[1vw]"
+                  className="whitespace-normal py-[1vw]"
                   style={{ lineHeight: "1", display: "block" }}
                 >
                   {prevPageTitle}
@@ -118,7 +118,7 @@ export default function Four() {
                 to={`/4/${nextPageId}`}
               >
                 <span
-                  className="whitespace-pre py-[1vw]"
+                  className="whitespace-normal py-[1vw]"
                   style={{ lineHeight: "1", display: "block" }}
                 >
                   {nextPageTitle}

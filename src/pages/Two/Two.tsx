@@ -4,11 +4,11 @@ import offlineSync from "@/services/offline-sync";
 import { SurveyData } from "@/types";
 
 const questions: string[] = [
-  "Our induction and onboarding are personalised and give new joiners ownership of their journey.",
-  "My team creates content at pace, and they are ready to embrace technology like AI.",
-  "Our compliance programmes are effective and are respected by all because they are central to our purpose and values.",
-  "Our leaders are truly inclusive and create a culture of psychological safety that enables everyone the time they need to learn.",
-  "Our skills content is bite-sized, blended, personalised and communicated effectively.",
+  "Our people are experiencing too much change to truly succeed",
+  "Our people are always engaged and motivated to continuously learn",
+  "Our workforce has the skills it needs to be successful in the future",
+  "Our department is playing its part in tackling the big issues",
+  "We are on track to deliver our digital transformation objectives",
 ];
 
 export default function Two() {

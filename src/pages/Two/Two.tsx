@@ -7,6 +7,7 @@ import { SurveyData } from "@/types";
 type Question = {
   question: string;
   options: string[];
+  multiple?: boolean;
 };
 
 const questions: Question[] = [
@@ -41,6 +42,7 @@ const questions: Question[] = [
       "🖌️    Graphic design",
       "🚫    None, we do it all in-house",
     ],
+    multiple: true,
   },
 ];
 
@@ -103,7 +105,9 @@ export default function Two() {
                     className="text-[3vw] mb-[1ch] flex items-center gap-[1ch] whitespace-pre-wrap"
                   >
                     <input
-                      type="radio"
+                      type={
+                        questions[questionIndex].multiple ? "checkbox" : "radio"
+                      }
                       id={`question-${index}-${questionIndex}`}
                       name="question"
                       value={option}
@@ -111,7 +115,18 @@ export default function Two() {
                       onInput={(event) => {
                         const input = inputRef.current;
                         if (input === null) return;
-                        input.value = event.currentTarget.value;
+                        let value = event.currentTarget.value;
+                        if (questions[questionIndex].multiple) {
+                          const checked = event.currentTarget.checked;
+                          const values = input.value
+                            .split(";")
+                            .filter((item) => item !== value);
+                          if (checked) {
+                            values.push(value);
+                          }
+                          value = values.join(";");
+                        }
+                        input.value = value.replace(/^;/, "");
                       }}
                     />
                     <label htmlFor={`question-${index}-${questionIndex}`}>

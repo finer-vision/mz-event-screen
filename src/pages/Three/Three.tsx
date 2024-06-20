@@ -23,33 +23,22 @@ export default function Three() {
 
   const sections = useMemo(() => {
     const sectionTitleImage = {
-      page3: image3, // Mandatory & ESG
       page1: image1, // Induction & Onboarding
-      page4: image4, // DEIB & Leadership
       page2: image2, // Transformation & Innovation
+      page3: image3, // Mandatory & ESG
+      page4: image4, // DEIB & Leadership
     };
     const answers = JSON.parse(
       localStorage.getItem("mz-event-screen") ?? "[]",
     ) as number[];
     // Remove last answer
     answers.pop();
-    return (
-      answers
-        .map((answer, index) => {
-          const answerIndex = index as keyof typeof answerIndexToSectionTitle;
-          const title = answerIndexToSectionTitle[answerIndex];
-          const image = title as keyof typeof sectionTitleImage;
-          return {
-            answer,
-            title,
-            image: sectionTitleImage[image],
-          };
-        })
-        // Order by answer lowest to highest
-        .sort((a, b) => {
-          return a.answer - b.answer;
-        })
-    );
+    return Object.entries(sectionTitleImage).map(([title, image], index) => {
+      return {
+        title,
+        image,
+      };
+    });
   }, []);
 
   useEffect(() => {

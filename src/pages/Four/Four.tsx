@@ -12,10 +12,10 @@ import fade from "@/motion/fade";
 import topData from "./top-data";
 
 const fullTitles = {
-  page1: `Let’s Lead Successfully`,
-  page2: `Let's collaborate effectively`,
-  page3: `Let's Adapt to Constant Change`,
-  page4: `Let's Create Better Working Cultures`,
+  page1: `Induction &\nOnboarding`,
+  page2: `Transformation &\nInnovation`,
+  page3: `Mandatory &\nESG`,
+  page4: `DEIB &\nLeadership`,
 };
 
 const URL = import.meta.env.VITE_GH_PAGES === "TRUE" ? "/mz-event-screen/" : "";
@@ -103,7 +103,7 @@ export default function Four() {
                 to={`/4/${prevPageId}`}
               >
                 <span
-                  className="whitespace-normal py-[1vw]"
+                  className="whitespace-pre py-[1vw]"
                   style={{ lineHeight: "1", display: "block" }}
                 >
                   {prevPageTitle}
@@ -118,7 +118,7 @@ export default function Four() {
                 to={`/4/${nextPageId}`}
               >
                 <span
-                  className="whitespace-normal py-[1vw]"
+                  className="whitespace-pre py-[1vw]"
                   style={{ lineHeight: "1", display: "block" }}
                 >
                   {nextPageTitle}

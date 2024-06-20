@@ -92,7 +92,6 @@ export default function Five() {
             <img
               src={`${URL}/data/${title}/${content?.video_placeholder_url}`}
               className="min-w-[86.2vw] min-h-[22vh] max-h-[22vh]"
-              style={{ objectFit: "contain", objectPosition: "50%" }}
             />
           )}
           {videoExists && (

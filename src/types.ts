@@ -7,6 +7,6 @@ export type PageData = {
 };
 
 export type SurveyData = {
-  answers: number[];
+  answers: string[];
   createdAt: string;
 };

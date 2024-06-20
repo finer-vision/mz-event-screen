@@ -62,7 +62,7 @@ export default function App() {
           }}
           className="w-full grid place-items-center mt-[4%] relative z-[600]"
         >
-          <motion.img {...fade(1)} className="w-[46%]" src="./logo.svg" />
+          <motion.img {...fade(1)} className="w-[46%]" src="./logonew.png" />
         </div>
         <Routes key={1}>
           <Route path="/1" element={<One />} />

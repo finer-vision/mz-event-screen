@@ -139,9 +139,11 @@ export default function Two() {
           </>
         )}
         {completed && (
-          <div className="text-[3.7vw] mt-[11%] h-[3vw] text-center">
-            Enjoy your cupcake! 🧁
-          </div>
+            <div className="flex items-center justify-center h-5/6">
+              <div className="text-[3.7vw] text-center">
+                Enjoy your cupcake! 🧁
+              </div>
+            </div>
         )}
         {questionIndex <= questions.length - 1 && (
           <button

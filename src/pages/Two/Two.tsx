@@ -107,7 +107,7 @@ export default function Two() {
                       id={`question-${index}-${questionIndex}`}
                       name="question"
                       value={option}
-                      className="aspect-square scale-[2]"
+                      className="aspect-square scale-[2.5]"
                       onInput={(event) => {
                         const input = inputRef.current;
                         if (input === null) return;

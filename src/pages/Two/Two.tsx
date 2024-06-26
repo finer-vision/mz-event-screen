@@ -82,10 +82,6 @@ export default function Two() {
 
   return (
     <>
-      <div
-        className="full-screen-gradient"
-        style={{ "--rotation": rotation } as React.CSSProperties}
-      />
       <div className="relative flex flex-col justify-start items-center w-full h-full bg-cover bg-no-repeat z-50">
         {!completed && (
           <>

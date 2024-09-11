@@ -137,7 +137,7 @@ export default function Two() {
         {completed && (
             <div className="flex items-center justify-center h-5/6">
               <div className="text-[3.7vw] text-center">
-                Enjoy your cupcake! 🧁
+                Thank you
               </div>
             </div>
         )}

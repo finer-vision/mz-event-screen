@@ -22,5 +22,19 @@
     "video_placeholder_url": "personalised-training.png",
     "description": "This high-impact trailer was used to market a full portal of personalised conduct training. It harnesses snippets of real colleague conduct stories, demonstrating the emotional journey of people who have raised conduct concerns about themselves or others. It instantly demonstrates a commitment to a positive conduct culture and set the tone for the rest of the programme.",
     "title2": "CONDUCT"
+  },
+  {
+    "title": "HSBC Competition Law",
+    "image_url": "hsbc.png",
+    "video_placeholder_url": "hsbc.png",
+    "description": "Creating personalised learning pathways for 25,000 colleagues in different divisions and  14 different job roles.\n\nConsisting of tailored case study films, scenarios, and motion graphics to bring the learning to life in a unique ‘Scrollytelling’ experience.\n\nAll of this was built on a robust content engine, using pre-designed templates for easy personalisation across the different business functions and roles.",
+    "title2": "The Content Engine in Action"
+  },
+  {
+    "title": "Danske Bank Data Protection",
+    "image_url": "danske-bank.png",
+    "video_placeholder_url": "danske-bank.png",
+    "description": "Danske Bank wanted to refresh their Data Protection training to ensure learners understand appropriate data processing and the customer’s rights under GDPR.\n\nWe developed an Evolve module that consisted of five chapters, each beginning with a pre-assessment that allowed learners to test-out and skip the chapter. \n\nThis refresh of Data Protection training was released to 24,000 learners in May 2024 in five different languages, including English and the four Nordic languages.",
+    "title2": "Adaptive Learning with Test-Out Logic"
   }
 ]

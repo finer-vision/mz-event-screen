@@ -19,5 +19,12 @@
     "video_placeholder_url": "image_3.png",
     "description": "M&S approached us with the need to create an event that would inspire their staff to engage with one of their largest strategic initiatives - to digitising everything at M&S, from products and services to people and experiences. They wanted to create a memorable experience that sparks curiosity and goes beyond learning. To build an immersive and digital experience that gets people talking, sharing and engaging with their digital strategy in new ways\n\nWe wanted to ensure true buy in from all teams and create dynamic spaces where they could learn in an immersive and participatory way. To share their experiences and ideas, and engage with each other. We designed a diagnostic style experience that could provide data on the existing mindsets around data and digital to capture challenges that we could tackle in the sessions. We also created Emotive films to build empathy \u2028\nEngaging and audience focused workshops then enabled active socialising of the learning content and new ideas. ",
     "title2": "M&S BEAM ACADEMY"
+  },
+  {
+    "title": "Meta – OCP Event Tech",
+    "image_url": "meta.png",
+    "video_placeholder_url": "meta.png",
+    "description": "We developed a digital touchscreen application that would enable representatives and engineers to showcase 10 models at an event stand effectively. The application needed to provide interactive features for users to explore each model and its sub-models in detail, including animations demonstrating how sub-models could be pulled out from inside the main models. Additionally, the application had to incorporate screensavers with rotating key messages and a user-friendly menu interface for easy navigation.",
+    "title2": ""
   }
 ]
